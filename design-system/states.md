@@ -2,7 +2,7 @@
 
 Page-level states: which edition, theme, layout and flow step the visitor is in. Component states (hover, focus, error …) are in [components.md](components.md).
 
-Every state below can be opened directly from the **review controller** on the live site (left panel → *Documented states*), so reviewers can check each one without clicking through the flow.
+Every state below can be opened directly from the **review controller** (open the site with `?review`, then left panel → *Documented states*), so reviewers can check each one without clicking through the flow.
 
 ## Editions and themes
 
@@ -13,6 +13,10 @@ Every state below can be opened directly from the **review controller** on the l
 | Street | `data-edition="street"` | Always dark. Shows `.st-only` content and hides `.gd-only` |
 
 The choice is saved in local storage (`py:edition`) and restored on the next visit.
+
+## Review mode
+
+The review panel and Dev mode only load when the address ends in `?review`, for example `https://priyankayadav769.github.io/portfolio/?review`. Without it, visitors always get the default layouts (Current intro, Experience option 1, Compare layout 1). The options picked in review mode are remembered in that browser only.
 
 ## Intro options (Street edition)
 
@@ -47,21 +51,20 @@ Set with `html[data-cmpl]`, saved in local storage (`py:cmpl`).
 | `3` | Option 2: pills on the side (vertical pill list, phones, copy) |
 | `4` | Option 3: big stage (copy above each larger phone) |
 
-## Case study open / closed
+## Pages
 
 | State | Trigger | Result |
 | --- | --- | --- |
-| Closed | Default, or "All work" / back | Portfolio sections visible |
-| Open | "View project" on the NoiseFit card | `html.case-open`, the card morphs into the case study, nav shows "All work" |
+| Home | `index.html` | Portfolio sections |
+| Case study | `case-studies/noisefit-sleep.html` (opened from the NoiseFit card) | The page loads with `html.case-open`, nav shows "All work". Old `index.html#case-sleep` links redirect here |
 
 ## NoiseFit app screens inside the case study
 
 | Screen | Asset folder |
 | --- | --- |
-| Old sleep page (before) | `assets/images/case-study/noisefit-screens/old-sleep-page/` |
-| New sleep page (after) | `assets/images/case-study/noisefit-screens/new-sleep-page/` |
-| New sleep page, second variant | `assets/images/case-study/noisefit-screens/new-sleep-page-variant/` |
-| Shared parts (status bar, icons) | `assets/images/case-study/noisefit-screens/shared/` |
+| Old sleep page (before) | `assets/icons/noisefit-app/old-sleep-page/` |
+| New sleep page (after) | `assets/icons/noisefit-app/new-sleep-page/` |
+| Shared parts (status bar, icons) | `assets/icons/noisefit-app/shared/` |
 
 Flows animated in the case study: add a sleep record → saved → success, and nap / second-sleep entries.
 
@@ -82,4 +85,4 @@ Flows animated in the case study: add a sleep record → saved → success, and 
 | Reduced motion | All animations and transitions are cut to near zero, grain is hidden, reveal content shows straight away |
 | Touch device | Custom cursor stays hidden (only shown for a mouse) |
 | Narrow screen (< 900px) | Review panel starts minimised |
-| Offline / no CDN | Fonts fall back to system fonts. Smooth scrolling (Lenis) and physics (Matter.js) are skipped, and the page still works |
+| Offline | Works fully: fonts (`assets/fonts`) and scripts (`js/vendor`) are part of the repository |

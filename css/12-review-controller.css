@@ -17,3 +17,6 @@ html.ctl-min #modesw button.on span{max-width:0;opacity:0}
 html.ctl-min #modesw button.on{padding:0 6px}
 #controls.rail{position:fixed!important;left:16px;top:56px;z-index:9450;max-height:calc(100vh - 72px)}
 @media (max-width:700px){html.ctl{--ctlw:0px}html.ctl.ctl-min{--ctlw:0px}.ctlcol{display:none}#controls.rail{width:220px!important;max-width:calc(100vw - 32px);box-shadow:0 20px 50px rgba(0,0,0,.6)}#devp{width:auto;left:16px;top:auto;height:50vh}html.ctl body.dev{margin-right:0}}
+
+/* Review panel is only shown in review mode (add ?review to the address) */
+html:not(.ctl) #controls,html:not(.ctl) .ctlcol{display:none!important}

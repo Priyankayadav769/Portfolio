@@ -1,0 +1,14 @@
+Copyright (c) 2026 Priyanka Yadav. All rights reserved.
+
+The design work, case studies, images, videos and text in this repository
+belong to Priyanka Yadav and are shown for portfolio purposes only. They may
+not be copied, reused or redistributed without written permission.
+
+Brand names and logos (Noise, NoiseFit, Noise Junior, Bose, Nykaa Fashion,
+Myntra, Times Internet and the tool logos in assets/icons/tools) belong to
+their respective owners.
+
+Third-party code and fonts keep their own licences:
+- Fonts in assets/fonts: SIL Open Font License 1.1 (see assets/fonts/LICENSE.md)
+- js/vendor/lenis.min.js: MIT (see js/vendor/LICENSE-lenis.txt)
+- js/vendor/matter.min.js: MIT (see js/vendor/LICENSE-matter-js.txt)

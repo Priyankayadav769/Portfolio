@@ -61,7 +61,7 @@ Every sticker has a 2.5px cream border, a slight rotation (`--rt`) and the hard 
 | Link `.links a` | Default muted · Hover background glass (Normal) or white text (Street) · **Active section** `.on`: set by scroll position, colour-only in Normal, red drip under the link in Street |
 | Burger `.burger` | Shown at ≤1260px · `aria-expanded` false/true · Open: three lines morph into a cross (`.menu-open`) |
 | Mobile menu `.mmenu` | Closed / open, full-screen, includes the edition toggle and résumé button |
-| Back link `.nav-back` | Only visible while a case study is open (`html.case-open`) |
+| Back link `.nav-back` | "All work": only shown on case study pages (`html.case-open`), returns to `index.html#work` |
 | Path chip `#pathChip` | Shows "Here for: …" after a visitor picks a path. Clear button resets it |
 
 ## Work card
@@ -73,7 +73,7 @@ Every sticker has a 2.5px cream border, a slight rotation (`--rt`) and the hard 
 | Default | Text column + device stage with a looping video or screen |
 | Hover | Stage tilts toward the pointer (`data-tilt`), cursor grows into a "View" disc (`data-cursor`) |
 | Link hover | Arrow in "View project" slides out and a new one slides in |
-| Open | Card morphs into the case study page (View Transitions), nav shows "All work". `Esc` goes back |
+| Open | Clicking the card or "View project" opens `case-studies/noisefit-sleep.html` with a cross-fade (`@view-transition`). `Esc` on the case page goes back to Work |
 | Street | Taped corners, stencil title, sticker category ("Kids product", "Launch page") |
 
 ## Custom cursor

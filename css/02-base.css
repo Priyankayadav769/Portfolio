@@ -1,16 +1,16 @@
 /* Shared assets, base elements, ambient light, grain, progress bar, loader, cursor */
 
 /* ============ assets (defined once, reused) ============ */
-.lg-noise{background-image:url("../assets/images/logos/noise.png");aspect-ratio:184/40}
-.lg-nykaa{background-image:url("../assets/images/logos/nykaa-fashion.png");aspect-ratio:127/71}
-.lg-myntra{background-image:url("../assets/images/logos/myntra.png");aspect-ratio:208/62}
-.lg-times{background-image:url("../assets/images/logos/times-internet.png");aspect-ratio:203/59}
+.lg-noise{background-image:url("../assets/images/logos/noise.webp");aspect-ratio:184/40}
+.lg-nykaa{background-image:url("../assets/images/logos/nykaa-fashion.webp");aspect-ratio:127/71}
+.lg-myntra{background-image:url("../assets/images/logos/myntra.webp");aspect-ratio:208/62}
+.lg-times{background-image:url("../assets/images/logos/times-internet.webp");aspect-ratio:203/59}
 .logo{display:block;background-position:center;background-size:contain;background-repeat:no-repeat;filter:var(--logo)}
 .ti{display:inline-block;flex:none;width:26px;height:26px;border-radius:8px;background:center/cover no-repeat;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
-.ti-claude{background-image:url("../assets/images/tools/claude.webp")}.ti-chatgpt{background-image:url("../assets/images/tools/chatgpt.webp")}.ti-gemini{background-image:url("../assets/images/tools/gemini.webp")}
-.ti-uxpilot{background-image:url("../assets/images/tools/ux-pilot.webp")}.ti-midjourney{background-image:url("../assets/images/tools/midjourney.webp")}.ti-figma{background-image:url("../assets/images/tools/figma.webp")}
-.ti-xd{background-image:url("../assets/images/tools/adobe-xd.webp")}.ti-ps{background-image:url("../assets/images/tools/photoshop.webp")}.ti-ai{background-image:url("../assets/images/tools/illustrator.webp")}
-.ti-framer{background-image:url("../assets/images/tools/framer.webp")}.ti-ae{background-image:url("../assets/images/tools/after-effects.webp")}.ti-html{background-image:url("../assets/images/tools/html.webp")}
+.ti-claude{background-image:url("../assets/icons/tools/claude.webp")}.ti-chatgpt{background-image:url("../assets/icons/tools/chatgpt.webp")}.ti-gemini{background-image:url("../assets/icons/tools/gemini.webp")}
+.ti-uxpilot{background-image:url("../assets/icons/tools/ux-pilot.webp")}.ti-midjourney{background-image:url("../assets/icons/tools/midjourney.webp")}.ti-figma{background-image:url("../assets/icons/tools/figma.webp")}
+.ti-xd{background-image:url("../assets/icons/tools/adobe-xd.webp")}.ti-ps{background-image:url("../assets/icons/tools/photoshop.webp")}.ti-ai{background-image:url("../assets/icons/tools/illustrator.webp")}
+.ti-framer{background-image:url("../assets/icons/tools/framer.webp")}.ti-ae{background-image:url("../assets/icons/tools/after-effects.webp")}.ti-html{background-image:url("../assets/icons/tools/html.webp")}
 
 /* ============ base ============ */
 *,*::before,*::after{box-sizing:inherit}
@@ -65,3 +65,6 @@ em{font-style:italic}
 .cur.hover{width:56px;height:56px;margin:-28px 0 0 -28px;background:var(--glow)}
 .cur-dot{width:5px;height:5px;margin:-2.5px 0 0 -2.5px;background:var(--acc)}
 body.has-cursor .cur,body.has-cursor .cur-dot{opacity:1}
+
+/* Smooth cross-fade between the home page and case study pages (supported browsers) */
+@view-transition{navigation:auto}

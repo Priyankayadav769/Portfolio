@@ -11,9 +11,9 @@ UI/UX and product designer at Noise, Gurugram. Designing for people, building wi
 
 | Project | Client | Type |
 | --- | --- | --- |
-| **NoiseFit sleep details page revamp**: a calmer way to read a night's sleep. One score up top, and the contributors that shaped it right below. Full case study on the site. | NoiseFit app | Mobile app · Data visualisation · Design system |
-| **Noise Junior purchase review**: a bright, friendly review moment for the Noise Jr. Champ 3. One product, one question, five stars from poor to great. | Noise Junior | Mobile app · Post-purchase flow · Kids product |
-| **Bose × Noise Master Buds**: the launch page for Master Buds with sound by Bose. Big imagery, highlight carousels and a clear path to buy. | gonoise.com | Campaign landing page · Responsive web |
+| **[NoiseFit sleep details page revamp](https://priyankayadav769.github.io/portfolio/case-studies/noisefit-sleep.html)**: a calmer way to read a night's sleep. One score up top, and the contributors that shaped it right below. | NoiseFit app | Mobile app · Data visualisation · Design system |
+| **Noise Junior purchase review**: a bright, friendly review moment for the Noise Jr. Champ 3. One product, one question, five stars from poor to great. Case study coming soon. | Noise Junior | Mobile app · Post-purchase flow · Kids product |
+| **[Bose × Noise Master Buds](https://www.gonoise.com/a/h/noise-master-buds-2-truly-wireless-earbuds)**: the launch page for Master Buds with sound by Bose. Big imagery, highlight carousels and a clear path to buy. | gonoise.com | Campaign landing page · Responsive web |
 
 Brands worked with: Noise, Nykaa Fashion, Myntra, Times Internet.
 
@@ -28,50 +28,45 @@ Visitors pick a mood on arrival and can switch at any time from the top bar (or 
 
 ```
 portfolio/
-├── index.html                  The website
-├── css/                        Styles, loaded in this order
-│   ├── 01-tokens.css           Design tokens (colour, type, motion, spacing) for every edition and theme
-│   ├── 02-base.css             Base elements, loader, cursor, grain
-│   ├── 03-nav.css              Navigation and mobile menu
-│   ├── 04-sections.css         Normal edition sections
-│   ├── 05-street-edition.css   Street edition
-│   ├── 06-edition-chooser.css  Edition chooser and spray transition
-│   ├── 07-review-panel.css     Review panel and Dev mode
-│   ├── 08-intro-options.css    Intro options under review
-│   ├── 09-street-work-experience.css
-│   ├── 10-case-study.css       NoiseFit case study and rebuilt app screens
-│   ├── 11-nav-polish.css
-│   ├── 12-review-controller.css
-│   └── 13-responsive.css       Breakpoints and reduced motion
-├── js/
-│   ├── main.js                 Site behaviour
-│   ├── dev-mode.js             Dev mode inspector
-│   └── review-controller.js    Review panel: documented states and jumps
+├── README.md
+├── .gitignore
+├── LICENSE
+├── index.html                    Home: hero, work, experience, toolbox, contact
+├── case-studies/
+│   ├── noisefit-sleep.html       NoiseFit sleep details page revamp
+│   └── noise-junior/             Noise Junior purchase review (coming soon)
 ├── assets/
-│   ├── images/
-│   │   ├── photos/             Portrait
-│   │   ├── projects/           Project covers and screens
-│   │   ├── logos/              Brands worked with
-│   │   ├── tools/              Toolbox icons (Figma, Claude, Adobe …)
-│   │   ├── icons/social/       LinkedIn, Behance
-│   │   ├── textures/           Paper and wall textures (Street edition)
-│   │   └── case-study/noisefit-screens/   Icons and parts of the rebuilt NoiseFit screens
-│   │       ├── old-sleep-page/
-│   │       ├── new-sleep-page/
-│   │       ├── new-sleep-page-variant/
-│   │       └── shared/
-│   └── videos/                 Project walkthrough videos
-├── design-system/
-│   ├── README.md               Overview and principles
-│   ├── foundations.md          Colour, typography, spacing, radius, elevation, motion, breakpoints
-│   ├── components.md           Components, variants and interaction states
-│   ├── states.md               Page-level states: editions, intro options, layouts, flows
-│   ├── accessibility.md        Contrast checks, focus, keyboard, motion
-│   ├── style-guide.html        Visual style guide (opens in a browser)
-│   └── tokens/tokens.json      Tokens in W3C Design Tokens format
-└── standalone/
-    └── priyanka-yadav-portfolio.html   The whole site in one file, for offline sharing
+│   ├── images/                   Web-ready .webp / .jpg
+│   │   ├── photos/               Portrait
+│   │   ├── projects/             Project covers and screens
+│   │   ├── logos/                Brands worked with
+│   │   └── textures/             Paper and wall textures (SVG, Street edition)
+│   ├── icons/
+│   │   ├── social/               LinkedIn, Behance
+│   │   ├── tools/                Toolbox icons (Figma, Claude, Adobe …)
+│   │   └── noisefit-app/         Icons and parts of the rebuilt NoiseFit screens
+│   ├── fonts/                    Self-hosted web fonts (.woff2) + licences
+│   └── videos/                   Project walkthrough videos
+├── css/                          Loaded in this order
+│   ├── 00-fonts.css              @font-face rules for assets/fonts
+│   ├── 01-tokens.css             Design tokens for every edition and theme
+│   ├── 02-base.css … 13-responsive.css
+├── js/
+│   ├── main.js                   Site behaviour (both pages)
+│   ├── dev-mode.js               Dev mode inspector (review mode only)
+│   ├── review-controller.js      Review panel (review mode only)
+│   └── vendor/                   Lenis (smooth scroll) and Matter.js (physics), MIT
+└── design-system/
+    ├── README.md                 Overview and principles
+    ├── foundations.md            Colour, typography, spacing, radius, elevation, motion
+    ├── components.md             Components, variants and interaction states
+    ├── states.md                 Page-level states and flows
+    ├── accessibility.md          Contrast checks, focus, keyboard, motion
+    ├── style-guide.html          Visual style guide
+    └── tokens/tokens.json        Tokens in W3C Design Tokens format
 ```
+
+Everything the site needs (fonts, scripts, images, videos) is in the repository. Nothing loads from outside services, so the site also works offline.
 
 ## Design system
 
@@ -79,15 +74,20 @@ Read the [design system](design-system/README.md): tokens, foundations, componen
 
 ## Sharing the site
 
-- **Best:** share the live link, https://priyankayadav769.github.io/portfolio/
-- **Offline:** send [`standalone/priyanka-yadav-portfolio.html`](standalone/priyanka-yadav-portfolio.html). It's a single file with every image and video inside, so it opens in any browser on its own.
-- To run this repository locally, download it and open `index.html`, or run `python3 -m http.server` in the folder and visit `http://localhost:8000`.
+- Share the live link: https://priyankayadav769.github.io/portfolio/
+- Link straight to a case study: https://priyankayadav769.github.io/portfolio/case-studies/noisefit-sleep.html
+- To run it locally, download the repository and open `index.html`, or run `python3 -m http.server` in the folder and visit `http://localhost:8000`.
 
-Fonts load from Google Fonts. Smooth scrolling (Lenis) and the toolbox physics (Matter.js) load from public CDNs. Without internet the site still works with system fonts.
+## Review mode
 
-## Review build
+Add `?review` to the address (https://priyankayadav769.github.io/portfolio/?review) to open the **review panel** and **Dev mode**. The panel switches intro options, experience layouts, compare layouts and editions, and jumps to every documented state. Dev mode lets you click any element to inspect its size, spacing, colours (mapped to the tokens), typography and code. Visitors without `?review` don't see either.
 
-The site includes a **review controller** (left panel) for design reviews. It switches intro options, experience layouts, compare layouts and editions, and jumps to every documented state. **Dev mode** lets you click any element to inspect its size, spacing, colours (mapped to the tokens), typography and code.
+## Adding a case study
+
+1. Create the page inside `case-studies/` (for example `case-studies/noise-junior/index.html`).
+2. Copy the `<head>` from `case-studies/noisefit-sleep.html`, keep `data-page="case"` on the `<html>` tag (it skips the home-page loader and animations), and adjust the `../` paths to the folder depth.
+3. Put images in `assets/images/projects/` as .webp or .jpg, and videos in `assets/videos/`.
+4. Point the project's card in `index.html` to the new page.
 
 ## Known issues
 
@@ -100,4 +100,4 @@ The site includes a **review controller** (left panel) for design reviews. It sw
 
 ---
 
-© Priyanka Yadav. All rights reserved. Project work is shown for portfolio purposes. Brand names and logos belong to their owners.
+© Priyanka Yadav. All rights reserved, see [LICENSE](LICENSE). Brand names and logos belong to their owners.

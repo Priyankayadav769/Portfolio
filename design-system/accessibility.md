@@ -30,7 +30,7 @@ Ratios calculated from the token values (WCAG relative luminance). AA needs 4.5:
 ## Focus and keyboard
 
 - Every interactive element shows a 2px `--acc` outline with a 4px offset on `:focus-visible`.
-- Keyboard shortcuts: `N` / `S` switch editions, `Esc` closes the case study, `Enter` moves to the next step of the brief form.
+- Keyboard shortcuts: `N` / `S` switch editions, `Esc` on a case study page returns to the Work section, `Enter` moves to the next step of the brief form.
 - The edition chooser is a real dialog (`role="dialog"`, `aria-modal="true"`, labelled by its heading).
 - The mobile menu button reports `aria-expanded` and controls `#mmenu`.
 

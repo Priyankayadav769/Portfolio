@@ -43,6 +43,8 @@ The rebuilt app screens use the product's own Figma tokens: background `#080a0b`
 
 ## Typography
 
+All fonts are self-hosted in [`assets/fonts`](../assets/fonts) and loaded by [`css/00-fonts.css`](../css/00-fonts.css), so the site needs no font service.
+
 | Token | Family | Used for |
 | --- | --- | --- |
 | `--serif` | Bodoni Moda | Normal edition display headings, field values |
