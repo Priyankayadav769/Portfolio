@@ -1,0 +1,19 @@
+/* Review controller layout */
+
+/* ============ REVIEW CONTROLLER (control panel + Dev mode, from the hand-off skill) ============ */
+html.ctl{--ctlw:252px}
+html.ctl.ctl-min{--ctlw:72px}
+html.ctl body{margin-left:var(--ctlw);transition:margin .3s var(--ease)}
+html.ctl body.dev{margin-right:324px}
+html.ctl .nav,html.ctl .progress,html.ctl .mmenu,html.ctl .chooser,html.ctl .loader,html.ctl .toast{left:var(--ctlw)}
+html.ctl body.dev .nav,html.ctl body.dev .progress{right:324px}
+html.ctl .progress{width:auto;right:0}
+html.ctl .toast{margin-left:calc(var(--ctlw) / 2)}
+.ctlcol{position:fixed;left:0;top:0;bottom:0;width:var(--ctlw);z-index:9400;background:#080a0b;border-right:1px solid #1d2024;transition:width .3s var(--ease)}
+#topbar{z-index:9450!important}
+html.ctl-min #topbar{flex-direction:column;gap:10px!important}
+html.ctl-min #modesw{flex-direction:column;border-radius:20px}
+html.ctl-min #modesw button.on span{max-width:0;opacity:0}
+html.ctl-min #modesw button.on{padding:0 6px}
+#controls.rail{position:fixed!important;left:16px;top:56px;z-index:9450;max-height:calc(100vh - 72px)}
+@media (max-width:700px){html.ctl{--ctlw:0px}html.ctl.ctl-min{--ctlw:0px}.ctlcol{display:none}#controls.rail{width:220px!important;max-width:calc(100vw - 32px);box-shadow:0 20px 50px rgba(0,0,0,.6)}#devp{width:auto;left:16px;top:auto;height:50vh}html.ctl body.dev{margin-right:0}}

@@ -1,0 +1,37 @@
+/* Navigation refinements: centred links, active and toggle states */
+
+/* ===== nav: centred links, one type size on the right, colour-only active state ===== */
+.nav-in{position:relative}
+@media (min-width:1061px){.nav .brand{margin-right:0}.nav .links{margin-inline:auto}}
+@media (min-width:1340px){[data-edition="street"] .nav .links{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}[data-edition="street"] .nav .tools-nav{margin-left:auto}}
+@media (min-width:1440px){[data-edition="gold"] .nav .links{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}[data-edition="gold"] .nav .tools-nav{margin-left:auto}}
+@media (min-width:1440px) and (max-width:1519px){html.case-open[data-edition="gold"] .nav .links{position:static;transform:none}}
+@media (min-width:1061px) and (max-width:1339px){.nav .links a{padding:8px 8px}[data-edition="street"] .nav .links a{padding:8px 7px}.nav .links{gap:0}.nav .nav-in{gap:10px}}
+@media (max-width:1260px){.links{display:none}.burger{display:block}.nav .btn.sm{display:none}}
+@media (max-width:1519px){html.case-open[data-edition="gold"] .nav .brand>span:last-child{display:none}}
+@media (max-width:1279px){html.case-open[data-edition="street"] .nav .brand .st-logo i{display:none}}
+.links a.on,.links a:hover{background:none}
+.links a.on{color:var(--acc)}
+.links a{font-size:14px}.ed{font-size:14px}.nav .btn.sm{font-size:14px}
+[data-edition="street"] .links a{font-size:15px}
+[data-edition="street"] .links a.on{color:var(--s-red)}
+[data-edition="street"] .links a:hover{color:#fff}
+[data-edition="street"] .links a.on::after{display:none}
+[data-edition="street"] .ed{font-size:15px;letter-spacing:.04em}
+[data-edition="street"] .nav .btn.sm{font-size:15px;letter-spacing:.04em}
+.nav-cv{gap:8px}.nav-cv svg{width:17px;height:17px;flex:none}
+.nav-cv .cv-full{display:none}@media (min-width:1700px){.nav-cv .cv-full{display:inline}.nav-cv .cv-short{display:none}}
+.mm-tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center}.mmenu .mm-cv{display:inline-flex!important}
+html.case-open .nav .links a.on{color:inherit}
+/* ===== nav polish: controls always on the right, real spacing, a toggle that reads as a toggle ===== */
+.nav .tools-nav{margin-left:auto;gap:16px}
+.ed{height:40px;padding:4px;gap:2px;align-items:center;cursor:pointer;background:rgba(128,128,128,.2);border:1px solid rgba(128,128,128,.28);box-shadow:inset 0 1px 2px rgba(0,0,0,.25)}
+.ed span{height:30px;display:flex;align-items:center;padding:0 14px;color:rgba(150,150,150,.95);transition:background .35s,color .35s}
+.ed:hover span:not([data-e]){color:inherit}
+:root[data-edition="gold"] .ed [data-e="gold"]{box-shadow:0 1px 3px rgba(0,0,0,.3)}
+[data-edition="street"] .ed{background:#2c2926;border:1px solid rgba(241,236,226,.16)}
+[data-edition="street"] .ed span{color:rgba(241,236,226,.55)}
+:root[data-edition="street"] .ed [data-e="street"]{box-shadow:0 1px 3px rgba(0,0,0,.4)}
+:root[data-edition="gold"] .ed [data-e="street"]:hover,:root[data-edition="street"] .ed [data-e="gold"]:hover{color:#f1ece2}
+.burger{flex:none}
+@media (max-width:1279px){html.case-open .nav .links{display:none}html.case-open .burger{display:block}html.case-open .nav .btn.sm{display:none}}

@@ -1,0 +1,92 @@
+/* Control panel + Dev mode inspector (review build) */
+
+/* ===== Control panel + Dev mode (inspect) ===== */
+body.dev #phone *{cursor:default!important}
+#devov{position:fixed;left:0;top:0;width:100vw;height:100vh;pointer-events:none;z-index:9000}
+#devov .b{position:absolute;box-sizing:border-box}
+#devov .hv{border:1px solid #0d99ff}
+#devov .sl{border:1.5px solid #0d99ff;background:rgba(13,153,255,.06)}
+#devov .pd{background:rgba(48,195,120,.28)}
+#devov .mg{background:rgba(246,166,35,.28)}
+#devov .ch{position:absolute;transform:translateX(-50%);background:#0d99ff;color:#fff;font:500 10px/14px 'SF Pro Text',-apple-system,Inter,sans-serif;padding:1px 5px;border-radius:3px;white-space:nowrap}
+#devov .nm{position:absolute;background:#0d99ff;color:#fff;font:500 10px/14px 'SF Pro Text',-apple-system,Inter,sans-serif;padding:1px 5px;border-radius:3px 3px 3px 0;white-space:nowrap;transform:translateY(-100%)}
+#devov .ln{position:absolute;background:#f24822}
+#devov .dl{position:absolute;transform:translate(-50%,-50%);background:#f24822;color:#fff;font:500 10px/14px 'SF Pro Text',-apple-system,Inter,sans-serif;padding:0 4px;border-radius:3px}
+#devp{position:fixed;right:16px;top:16px;bottom:16px;width:308px;background:#14171a;border:1px solid #2a2f34;border-radius:10px;z-index:9500;display:none;flex-direction:column;overflow:hidden;font:400 12px/16px 'SF Pro Text',-apple-system,Inter,sans-serif;color:#adb5bd}
+body.dev #devp{display:flex}
+#devp .hd{padding:12px 12px 8px;border-bottom:1px solid #2a2f34;flex:none}
+#devp .hd .tt{font:600 14px/20px 'SF Pro Text',-apple-system,Inter,sans-serif;color:#f8f9fa;word-break:break-all}
+#devp .hd .sub{font:400 11px/14px ui-monospace,Menlo,monospace;color:#6c757d;word-break:break-all;margin-top:2px}
+#devp .cr{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+#devp .cr button{background:#1d2024;border:1px solid #2a2f34;color:#adb5bd;border-radius:4px;font:inherit;font-size:10px;line-height:14px;padding:1px 5px;cursor:pointer;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#devp .cr button:hover{color:#f8f9fa;border-color:#6c757d}
+#devp .bd{overflow-y:auto;flex:1;padding:0 12px 12px}
+#devp .sc{padding-top:12px;border-bottom:1px solid #2a2f34;padding-bottom:12px}
+#devp .sc:last-child{border-bottom:0}
+#devp .sc h6{font:500 10px/12px 'SF Pro Text',-apple-system,Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#6c757d;margin:0 0 8px}
+#devp .rw{display:flex;justify-content:space-between;gap:8px;align-items:flex-start;padding:2px 0}
+#devp .rw>span:first-child{color:#6c757d;flex:none}
+#devp .rw>span:last-child{color:#f8f9fa;text-align:right;word-break:break-word}
+#devp .rw small{display:block;color:#6c757d;font-size:10px;line-height:12px}
+#devp small.no{color:#c74355}
+#devp .cl{display:flex;gap:8px;align-items:center;padding:3px 0}
+#devp .cl .sw{width:20px;height:20px;border-radius:4px;border:1px solid rgba(255,255,255,.18);flex:none;cursor:pointer;background-clip:padding-box}
+#devp .cl .vl{color:#f8f9fa;line-height:14px}
+#devp .cl .vl small{display:block;color:#6c757d;font-size:10px;line-height:12px}
+#devp .cl .lb{color:#6c757d;width:58px;flex:none}
+#devp .bm{margin:4px 0 8px;font:500 10px/12px ui-monospace,Menlo,monospace;color:#f8f9fa}
+#devp .bm .m{position:relative;background:rgba(246,166,35,.18);border:1px dashed rgba(246,166,35,.6);padding:20px 28px}
+#devp .bm .p{position:relative;background:rgba(48,195,120,.2);border:1px dashed rgba(48,195,120,.7);padding:20px 28px}
+#devp .bm .c{background:rgba(13,153,255,.2);border:1px solid rgba(13,153,255,.7);text-align:center;padding:8px 2px;white-space:nowrap}
+#devp .bm i{position:absolute;font-style:normal}
+#devp .bm .t{top:3px;left:50%;transform:translateX(-50%)}
+#devp .bm .b{bottom:3px;left:50%;transform:translateX(-50%)}
+#devp .bm .l{left:6px;top:50%;transform:translateY(-50%)}
+#devp .bm .r{right:6px;top:50%;transform:translateY(-50%)}
+#devp pre{background:#101215;border:1px solid #2a2f34;border-radius:6px;padding:8px;font:400 11px/16px ui-monospace,Menlo,monospace;color:#adb5bd;white-space:pre-wrap;word-break:break-all;margin:0}
+#devp .cp{background:#1d2024;border:1px solid #2a2f34;color:#f8f9fa;border-radius:6px;font:inherit;padding:4px 10px;cursor:pointer;margin-bottom:6px}
+#devp .cp:hover{border-color:#6c757d}
+#devp .tabs{display:flex;gap:4px;margin-bottom:8px;flex-wrap:wrap}
+#devp .tabs button{background:#14171a;border:1px solid #2a2f34;color:#adb5bd;border-radius:6px;font:inherit;padding:3px 8px;cursor:pointer}
+#devp .tabs button.on{background:#2a2f34;color:#f8f9fa;border-color:#495057}
+#devp .empty{padding:16px 12px;line-height:18px}
+#devp .empty b{color:#f8f9fa;font-weight:600;display:block;margin-bottom:6px;font-size:14px}
+#devp .empty kbd{font:500 10px ui-monospace,Menlo,monospace;background:#1d2024;border:1px solid #2a2f34;border-radius:3px;padding:0 4px;color:#f8f9fa}
+#devp .dt{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);background:#f8f9fa;color:#080a0b;border-radius:6px;padding:4px 10px;font-weight:500;pointer-events:none}
+#modesw{display:flex;gap:2px;padding:3px;background:#14171a;border:1px solid #2a2f34;border-radius:1000px;position:relative}
+#modesw button{display:flex;align-items:center;gap:6px;height:32px;min-width:32px;padding:0 6px;border:0;border-radius:1000px;background:transparent;color:#adb5bd;font:500 12px/16px 'SF Pro Text',-apple-system,Inter,sans-serif;cursor:pointer;justify-content:center;transition:background .15s,color .15s}
+#modesw button svg{flex:none;display:block}
+#modesw button span{max-width:0;overflow:hidden;white-space:nowrap;opacity:0;transition:max-width .2s ease,opacity .15s ease}
+#modesw button.on{background:#2a2f34;color:#f8f9fa;padding:0 10px 0 8px}
+#modesw button.on span{max-width:90px;opacity:1}
+#modesw button:not(.on):hover{color:#f8f9fa}
+#topbar{position:fixed;left:16px;top:16px;z-index:60;display:flex;align-items:flex-start;gap:16px}
+#ctlToggle{display:flex;position:relative;width:40px;height:40px;flex:none;align-items:center;justify-content:center;padding:0;cursor:pointer;background:#14171a;border:1px solid #2a2f34;border-radius:10px;z-index:2}
+#ctlToggle:hover{border-color:#6c757d}
+#ctlToggle.open{height:41px;border-radius:10px 10px 0 0;background:#1d2024;border-bottom-color:#1d2024}
+/* control panel card (same look as the reference prototype) */
+#controls{width:220px;flex:none;display:flex;flex-direction:column;gap:12px;padding:12px;background:#1d2024;border:1px solid #2a2f34;border-radius:0 10px 10px 10px;position:sticky;top:56px;max-height:calc(100vh - 72px);overflow-y:auto;font-size:12px;color:#adb5bd}
+#controls.min{visibility:hidden}
+#controls h1{font-size:12px;line-height:16px;font-weight:600;color:#f8f9fa}
+#controls h1 em{font-style:normal;color:#b4964a;margin-left:4px}
+#controls p{font-size:11px;line-height:14px;color:#6c757d}
+#controls .grp{gap:6px}
+#controls .grp>label{font-size:11px;line-height:14px;text-transform:none;font-weight:400;color:#6c757d}
+#controls .seg{background:none;border:0;padding:0;gap:4px;flex-wrap:wrap}
+#controls .seg button,#controls .steps button,#devstates button{background:#14171a;border:1px solid #2a2f34;color:#adb5bd;border-radius:6px;padding:6px 4px;font-size:11px;line-height:14px;text-align:center;box-shadow:none}
+#controls .seg button{min-width:60px}
+#controls .seg button[aria-pressed=true],#controls .steps button[aria-current=true],#devstates button[aria-current=true]{background:#14171a;border-color:#b4964a;color:#f8f9fa;box-shadow:none}
+#controls .steps,#devstates{display:flex;flex-direction:column;gap:4px}
+#devstates button{width:100%}
+#controls .steps button:hover,#devstates button:hover{background:#1d2024;color:#f8f9fa}
+#controls .reset{align-self:stretch;text-align:center;text-decoration:none;background:#14171a;border:1px solid #2a2f34;border-radius:6px;padding:6px 4px;font-size:11px;line-height:14px;color:#adb5bd}
+#controls .reset:hover{background:#1d2024;color:#f8f9fa}
+#controls .hint{font-size:11px;line-height:14px;color:#6c757d}
+.dvst{display:flex;flex-direction:column;gap:2px;font-size:11px;line-height:16px;color:#6c757d}
+.dvst div{display:flex;justify-content:space-between;gap:8px}.dvst b{font-weight:500;color:#f8f9fa;text-align:right}
+.dvg{font-size:10px;line-height:14px;color:#6c757d;text-transform:uppercase;letter-spacing:.04em;margin:6px 0 0}
+#controls{width:220px;flex:none}
+#controls.min{display:none}
+
+#controls .seg{display:flex}#controls .grp{display:flex;flex-direction:column}#controls h1,#controls p{margin:0}#controls p{margin-top:4px}#controls{font-family:-apple-system,BlinkMacSystemFont,Inter,'Segoe UI',sans-serif;line-height:1.4}#controls button{font-family:inherit;cursor:pointer}
+#controls .seg.col{flex-direction:column}#controls .seg.col button{width:100%;text-align:left;padding:7px 8px}#controls .seg.col button small{display:block;color:#6c757d;font-size:10px;line-height:13px;margin-top:1px}#controls .seg.col button[aria-pressed=true] small{color:#adb5bd}

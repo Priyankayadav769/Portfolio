@@ -1,0 +1,63 @@
+/* Responsive breakpoints */
+
+/* ============ responsive ============ */
+@media (max-width:1060px){
+  .links{display:none}
+  .burger{display:block}
+  .nav .btn.sm{display:none}
+}
+@media (max-width:900px){
+  .pro-sticky{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto;gap:10px;padding:78px var(--gut) 64px;align-items:stretch}
+  .pro-vis{order:-1}
+  .pro-texts{align-items:end}
+  .pt{max-width:none}
+  .ch-h{font-size:clamp(24px,6.4vw,34px);margin-bottom:12px}
+  .ch-p{font-size:15px;margin-bottom:8px}
+  .ch-q{display:none}
+  .pv figcaption{display:none}
+  .arch{width:min(300px,62%)}
+  .tile{padding:20px 18px 16px;gap:26px}
+  .device{width:min(220px,48%)}
+  .cert{right:0;top:4%;max-width:200px;font-size:13px}
+  .pro-rail button span{display:none}
+  .hero-grid{grid-template-columns:1fr}
+  .smudge{width:min(100%,380px);order:-1;margin-bottom:10px}
+  .smudge .sticker{right:-2%}
+  .name .ln:nth-child(2){padding-left:.3em}
+  .sh{grid-template-columns:1fr;gap:18px}
+  .sh>p{justify-self:start}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat:nth-child(3){padding-left:0;border-left:0}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .card{height:auto;min-height:min(84svh,760px);top:calc(env(safe-area-inset-top,0px) + 80px + var(--i) * 14px)}
+  .card-in{grid-template-columns:1fr;grid-template-rows:auto minmax(320px,1fr)}
+  .c-text h3{margin-top:28px}
+  .c-text p{margin-bottom:18px}
+  .c-tags{margin-bottom:20px}
+  .c-stage .device{width:min(210px,52%)}
+  .xp .rail{left:6px}
+  .xi{grid-template-columns:1fr;padding-left:34px;gap:16px}
+  .node{left:6px;top:40px}
+  .xl{padding-right:0}
+  .xr{padding-left:0}
+  .edu{grid-template-columns:1fr}
+  .ct-grid{grid-template-columns:1fr}
+  .f-cols{grid-template-columns:1fr 1fr}
+  .f-cols>div:first-child{grid-column:1/-1}
+  .hero-foot{flex-direction:column;align-items:start}
+  .tools-nav .ed{display:none}
+}
+@media (max-width:520px){
+  .nav-in{gap:8px}
+  .brand small{display:none}
+  .snd{width:38px;height:38px}
+  .f-steps li{font-size:0;gap:0}
+  .ticket{grid-template-columns:1fr}
+  .tiles{gap:12px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .grain{display:none}
+  [data-rv]{opacity:1;transform:none;filter:none}
+  .split .ch>span{transform:none}
+}

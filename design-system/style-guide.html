@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" data-edition="gold" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Style guide · Priyanka Yadav</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Hanken+Grotesk:wght@300..700&family=Sedgwick+Ave&family=Sedgwick+Ave+Display&family=Big+Shoulders+Stencil:wght@700..900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<!-- The real tokens used by the site -->
+<link rel="stylesheet" href="../css/01-tokens.css">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;transition:background .4s var(--ease),color .4s var(--ease)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--gut)}
+header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+header b{font-family:var(--serif);font-weight:500;font-size:20px}
+.seg{display:flex;padding:3px;border-radius:999px;border:1px solid var(--glass-b);background:var(--glass)}
+.seg button{font:600 13px var(--sans);color:var(--mute);background:none;border:0;padding:7px 14px;border-radius:999px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--acc);color:var(--on-acc)}
+.seg button:focus-visible,.btn:focus-visible{outline:2px solid var(--acc);outline-offset:4px}
+section{padding:64px 0;border-bottom:1px solid var(--line)}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,6.6vw,96px);line-height:1;margin:48px 0 12px;letter-spacing:-.02em}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.6vw,48px);margin:0 0 8px}
+[data-edition="street"] h1,[data-edition="street"] h2{font-family:var(--tag);color:var(--acc);letter-spacing:0}
+.lede{color:var(--mute);max-width:62ch;margin:0 0 28px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+.sw{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--bg2)}
+.sw i{display:block;height:84px;border-bottom:1px solid var(--line)}
+.sw div{padding:10px 12px;font-size:13px}
+.sw code{display:block;font:500 12px "JetBrains Mono",monospace;color:var(--mute)}
+.type-row{display:grid;grid-template-columns:180px 1fr;gap:20px;align-items:baseline;padding:18px 0;border-top:1px solid var(--line)}
+.type-row small{color:var(--mute);font:500 12px "JetBrains Mono",monospace}
+@media (max-width:640px){.type-row{grid-template-columns:1fr;gap:4px}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:48px;padding:0 24px;border-radius:999px;font:600 15.5px var(--sans);white-space:nowrap;border:0;cursor:pointer;position:relative;overflow:hidden;transition:transform .5s var(--spring),border-color .3s}
+.btn.gold{background:var(--acc);color:var(--on-acc)}
+.btn.gold::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);transform:translateX(-110%);transition:transform .8s var(--ease)}
+.btn.gold:hover::after,.btn.gold.is-hover::after{transform:translateX(0)}
+.btn.ghost{background:var(--glass);border:1px solid var(--line);color:var(--ink)}
+.btn.ghost:hover,.btn.ghost.is-hover{border-color:var(--acc)}
+.btn.is-focus{outline:2px solid var(--acc);outline-offset:4px}
+.btn:active,.btn.is-active{transform:scale(.96)}
+.btn[aria-disabled="true"]{opacity:.9;pointer-events:none}
+.btn .dot{width:8px;height:8px;border-radius:50%;background:var(--acc)}
+[data-edition="street"] .btn{font-family:var(--sten);font-weight:800;text-transform:uppercase;letter-spacing:.03em;font-size:17px;border-radius:11px}
+[data-edition="street"] .btn.gold{background:var(--s-red);color:#fff;border:2.5px solid var(--s-cream);box-shadow:0 4px 0 rgba(0,0,0,.5)}
+[data-edition="street"] .btn.ghost{background:#141312;border:2.5px solid var(--s-cream);color:var(--s-cream);box-shadow:0 4px 0 rgba(0,0,0,.5)}
+[data-edition="street"] .btn .dot{background:var(--s-yel)}
+.states{display:grid;grid-template-columns:110px repeat(5,minmax(120px,1fr));gap:16px 14px;align-items:center;overflow-x:auto;padding-bottom:8px}
+.states .h{font:500 12px "JetBrains Mono",monospace;color:var(--mute)}
+.field{padding:18px 20px;border-radius:24px;background:var(--glass);border:1px solid var(--glass-b);display:flex;flex-direction:column;gap:6px}
+.field .k{font-size:14px;color:var(--mute)}
+.field input{font:inherit;font-size:17px;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--line);padding:8px 0;outline:none;border-radius:0}
+.field input:focus,.field.is-focus input{border-color:var(--acc)}
+.field .err{font-size:13.5px;color:#d9534f;min-height:20px;margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:14px;padding:7px 13px;border-radius:999px;background:var(--glass);border:1px solid var(--glass-b)}
+.toast{display:inline-block;padding:12px 20px;border-radius:999px;background:var(--ink);color:var(--bg);font-size:14.5px;font-weight:600}
+.row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.sb{display:inline-flex;align-items:center;height:38px;padding:0 14px;border-radius:9px;border:2.5px solid var(--s-cream);font:800 14.5px/1 var(--sten);text-transform:uppercase;letter-spacing:.03em;box-shadow:0 4px 0 rgba(0,0,0,.5)}
+.motion{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.track{height:56px;border-radius:14px;background:var(--bg2);border:1px solid var(--line);position:relative;overflow:hidden}
+.track i{position:absolute;top:12px;left:12px;width:32px;height:32px;border-radius:50%;background:var(--acc)}
+.motion .play .track i{left:calc(100% - 44px)}
+.motion .ease i{transition:left 1s var(--ease)}.motion .spring i{transition:left 1s var(--spring)}
+.box{display:grid;place-items:center;height:110px;border-radius:var(--r);background:var(--bg2);border:1px solid var(--line);font:500 12px "JetBrains Mono",monospace;color:var(--mute)}
+.shadow{height:110px;border-radius:24px;background:var(--bg2);box-shadow:var(--shadow);display:grid;place-items:center;font:500 12px "JetBrains Mono",monospace;color:var(--mute)}
+footer{padding:40px 0 64px;color:var(--mute);font-size:14px}
+a{color:var(--acc)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <b>Style guide</b>
+    <div class="seg" role="group" aria-label="Edition and theme">
+      <button data-mode="light" aria-pressed="true">Normal · light</button>
+      <button data-mode="dark" aria-pressed="false">Normal · dark</button>
+      <button data-mode="street" aria-pressed="false">Street</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Same work, two moods.</h1>
+  <p class="lede">The tokens and components behind the portfolio. Every colour on this page comes straight from <code>css/01-tokens.css</code>. Switch the edition at the top and everything restyles itself.</p>
+
+  <section aria-labelledby="c">
+    <h2 id="c">Colour</h2>
+    <p class="lede">Semantic tokens. Components only use these, never raw hex values.</p>
+    <div class="grid" id="swatches"></div>
+    <h2 style="margin-top:48px;font-size:28px">Street palette</h2>
+    <div class="grid" id="street"></div>
+  </section>
+
+  <section aria-labelledby="t">
+    <h2 id="t">Typography</h2>
+    <p class="lede">Two fonts and two sizes per section wherever possible.</p>
+    <div class="type-row"><small>--serif · Bodoni Moda</small><span style="font-family:var(--serif);font-size:clamp(36px,5vw,64px);line-height:1">Designing for people</span></div>
+    <div class="type-row"><small>--sans · Hanken Grotesk</small><span style="font-size:18px">Body copy at 18px, line height 1.55. I design simple things, and use AI to get there faster.</span></div>
+    <div class="type-row"><small>--tag · Sedgwick Ave Display</small><span style="font-family:var(--tag);font-size:clamp(36px,5vw,64px);line-height:1">Sleep, explained.</span></div>
+    <div class="type-row"><small>--hand · Sedgwick Ave</small><span style="font-family:var(--hand);font-size:28px">that's me, hii!</span></div>
+    <div class="type-row"><small>--sten · Big Shoulders Stencil</small><span style="font-family:var(--sten);font-weight:800;text-transform:uppercase;font-size:28px">View project</span></div>
+    <div class="type-row"><small>--deva · Tiro Devanagari Hindi</small><span style="font-family:var(--deva);font-size:32px" lang="hi">नमस्ते</span></div>
+    <div class="type-row"><small>JetBrains Mono</small><span style="font:500 14px 'JetBrains Mono',monospace">Mobile app | Data visualisation | Design system</span></div>
+  </section>
+
+  <section aria-labelledby="b">
+    <h2 id="b">Buttons and states</h2>
+    <p class="lede">Hover previews, focus shows a 2px accent ring, pressed confirms, disabled stays readable. Buttons in the Default column are live: hover, tab to and press them.</p>
+    <div class="states">
+      <span></span><span class="h">Default</span><span class="h">Hover</span><span class="h">Focus</span><span class="h">Pressed</span><span class="h">Disabled</span>
+      <span class="h">Primary</span>
+      <span><button class="btn gold">Get in touch</button></span>
+      <span><button class="btn gold is-hover" tabindex="-1">Get in touch</button></span>
+      <span><button class="btn gold is-focus" tabindex="-1">Get in touch</button></span>
+      <span><button class="btn gold is-active" tabindex="-1">Get in touch</button></span>
+      <span><span class="btn gold" aria-disabled="true"><i class="dot"></i>Coming soon</span></span>
+      <span class="h">Secondary</span>
+      <span><button class="btn ghost">All work</button></span>
+      <span><button class="btn ghost is-hover" tabindex="-1">All work</button></span>
+      <span><button class="btn ghost is-focus" tabindex="-1">All work</button></span>
+      <span><button class="btn ghost is-active" tabindex="-1">All work</button></span>
+      <span><span class="btn ghost" aria-disabled="true"><i class="dot"></i>Coming soon</span></span>
+    </div>
+    <h2 style="margin-top:48px;font-size:28px">Street stickers</h2>
+    <div class="row">
+      <span class="sb" style="background:var(--s-red);color:#fff">Red</span>
+      <span class="sb" style="background:var(--s-yel);color:#141312">Yellow</span>
+      <span class="sb" style="background:var(--s-blu);color:#fff">Blue</span>
+      <span class="sb" style="background:var(--s-grn);color:#0b0b0b">Green</span>
+      <span class="sb" style="background:var(--s-org);color:#141312">Orange</span>
+      <span class="sb" style="background:var(--s-cream);color:var(--s-red)">White</span>
+      <span class="sb" style="background:#141312;color:var(--s-cream)">Dark</span>
+    </div>
+  </section>
+
+  <section aria-labelledby="f">
+    <h2 id="f">Form field states</h2>
+    <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">
+      <label class="field"><span class="k">Default</span><input placeholder="Your name"><p class="err"></p></label>
+      <label class="field is-focus"><span class="k">Focus</span><input value="Priyanka" tabindex="-1"><p class="err"></p></label>
+      <label class="field"><span class="k">Error</span><input value="you@" tabindex="-1"><p class="err">Add an email I can reply to, like you@company.com.</p></label>
+    </div>
+  </section>
+
+  <section aria-labelledby="o">
+    <h2 id="o">Chips and feedback</h2>
+    <div class="chips" style="margin-bottom:24px"><span>Mobile app design</span><span>Design systems</span><span>Campaign landing pages</span></div>
+    <span class="toast" role="status">Email copied</span>
+  </section>
+
+  <section aria-labelledby="r">
+    <h2 id="r">Radius and elevation</h2>
+    <div class="grid">
+      <div class="box" style="--r:999px">pill · 999px</div>
+      <div class="box" style="--r:24px">card · 24px</div>
+      <div class="box" style="--r:11px">sticker · 11px</div>
+      <div class="box" style="--r:10px">app card · 10px</div>
+      <div class="box" style="--r:4px">paper · 4px</div>
+      <div class="shadow">--shadow</div>
+    </div>
+  </section>
+
+  <section aria-labelledby="m">
+    <h2 id="m">Motion</h2>
+    <p class="lede">Hover a track (or tap it) to play the curve.</p>
+    <div class="motion">
+      <div class="ease"><div class="track" tabindex="0"><i></i></div><p><code>--ease</code> · cubic-bezier(.22,1,.36,1)<br><small>Reveals, menus, page transitions</small></p></div>
+      <div class="spring"><div class="track" tabindex="0"><i></i></div><p><code>--spring</code> · cubic-bezier(.34,1.56,.64,1)<br><small>Buttons, toast, press feedback</small></p></div>
+    </div>
+  </section>
+</main>
+<footer class="wrap">Full documentation: <a href="https://github.com/Priyankayadav769/portfolio/tree/main/design-system">design-system on GitHub</a> · <a href="../index.html">Back to the portfolio</a></footer>
+
+<script>
+const SEM=[['--bg','Background'],['--bg2','Surface'],['--ink','Text'],['--mute','Muted text'],['--line','Border'],['--glass','Glass'],['--glass-b','Glass border'],['--chip','Chip'],['--acc','Accent'],['--acc2','Accent light'],['--on-acc','On accent'],['--glow','Glow']];
+const ST=[['--s-red','Red'],['--s-yel','Yellow'],['--s-grn','Green'],['--s-blu','Blue'],['--s-org','Orange'],['--s-cream','Cream'],['--s-paper','Paper'],['--s-ink','Ink']];
+const card=([v,n])=>`<div class="sw"><i style="background:var(${v})"></i><div>${n}<code>${v}</code><code data-v="${v}"></code></div></div>`;
+document.getElementById('swatches').innerHTML=SEM.map(card).join('');
+document.getElementById('street').innerHTML=ST.map(card).join('');
+const root=document.documentElement;
+function paint(){const cs=getComputedStyle(root);document.querySelectorAll('[data-v]').forEach(e=>e.textContent=cs.getPropertyValue(e.dataset.v).trim())}
+document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{
+  const m=b.dataset.mode;
+  root.dataset.edition=m==='street'?'street':'gold';
+  root.dataset.theme=m==='dark'?'dark':'light';
+  document.querySelectorAll('[data-mode]').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  requestAnimationFrame(paint);
+}));
+document.querySelectorAll('.track').forEach(t=>{const p=t.parentElement;const on=()=>p.classList.add('play'),off=()=>p.classList.remove('play');t.addEventListener('mouseenter',on);t.addEventListener('mouseleave',off);t.addEventListener('focus',on);t.addEventListener('blur',off);t.addEventListener('click',()=>p.classList.toggle('play'))});
+paint();
+</script>
+</body>
+</html>
