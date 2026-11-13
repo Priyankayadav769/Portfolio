@@ -116,3 +116,18 @@
   .mk:nth-of-type(11){--mx:84%;--my:77%} /* Simple, with AI */
   .mk:nth-of-type(12){--mx:13%;--my:83%} /* AI */
 }
+
+/* ============ Work + Experience polish (Street edition) ============ */
+/* "Crafted things." centred in every view */
+[data-edition="street"] .wk-title{justify-content:center;text-align:center}
+[data-edition="street"] .sth2:has(.chrome){justify-content:center}
+
+/* Experience: job titles in the tag font (stencil), one line, sized to fill the space */
+[data-edition="street"] .xo1 .xr h3{font-family:var(--sten);font-weight:800;text-transform:uppercase;letter-spacing:.03em;font-size:clamp(30px,3.3vw,50px);line-height:1.05;white-space:nowrap;margin:0 0 8px;color:var(--s-cream)}
+@media (max-width:900px){
+  [data-edition="street"] .xo1 .xr h3{font-size:clamp(15px,4.5vw,30px);letter-spacing:.02em}
+}
+/* Experience: coloured logos on cream chips (same as "Worked with"), not white */
+[data-edition="street"] .xo1 .xl .logo{filter:none;box-sizing:border-box;width:128px;height:56px;max-width:none;padding:13px 16px;background-color:#f4f1ea;background-origin:content-box;background-position:center;border-radius:10px;box-shadow:0 4px 0 rgba(0,0,0,.5)}
+[data-edition="street"] .xo1 .xl .lg-nykaa{height:56px;padding:9px 16px}
+[data-edition="street"] .xo1 .xl .lg-noise,[data-edition="street"] .xo1 .xl .lg-nykaa,[data-edition="street"] .xo1 .xl .lg-myntra,[data-edition="street"] .xo1 .xl .lg-times{aspect-ratio:auto}
