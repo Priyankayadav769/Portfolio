@@ -432,8 +432,8 @@ if(location.hash.length>1){const t=document.getElementById(location.hash.slice(1
 
 /* ---------- make a mess: draggable stickers ---------- */
 (function(){const box=$('#messBox');if(!box)return;const mks=$$('.mk',box);const init=mks.map(m=>m.getAttribute('style'));let z=10;
-  mks.forEach((m,idx)=>m.addEventListener('pointerdown',e=>{e.preventDefault();m.setPointerCapture(e.pointerId);const mr=m.getBoundingClientRect(),ox=e.clientX-mr.left,oy=e.clientY-mr.top;m.classList.add('drag');m.style.zIndex=++z;const r0=parseFloat(m.style.getPropertyValue('--r'))||0;let lastX=e.clientX;pluck(scale[idx%scale.length],.06);
-    const mv=ev=>{const b=box?.getBoundingClientRect();m.style.left=clamp(ev.clientX-b.left-ox,-40,b.width-40)+'px';m.style.top=clamp(ev.clientY-b.top-oy,-30,b.height-30)+'px';const vx=ev.clientX-lastX;lastX=ev.clientX;m.style.setProperty('--r',clamp(r0+vx*1.5,-30,30).toFixed(1)+'deg')};
+  mks.forEach((m,idx)=>m.addEventListener('pointerdown',e=>{e.preventDefault();m.setPointerCapture(e.pointerId);const sx=e.clientX,sy=e.clientY,l0=m.offsetLeft,t0=m.offsetTop;m.classList.add('drag');m.style.zIndex=++z;const r0=parseFloat(m.style.getPropertyValue('--r'))||0;let lastX=e.clientX;pluck(scale[idx%scale.length],.06);
+    const mv=ev=>{const b=box?.getBoundingClientRect();m.style.left=clamp(l0+ev.clientX-sx,-40,b.width-40)+'px';m.style.top=clamp(t0+ev.clientY-sy,-30,b.height-30)+'px';const vx=ev.clientX-lastX;lastX=ev.clientX;m.style.setProperty('--r',clamp(r0+vx*1.5,-30,30).toFixed(1)+'deg')};
     const upf=()=>{m.classList.remove('drag');m.removeEventListener('pointermove',mv);m.removeEventListener('pointerup',upf);m.removeEventListener('pointercancel',upf);m.style.setProperty('--r',(r0+(Math.random()-.5)*12).toFixed(1)+'deg');tick()};
     m.addEventListener('pointermove',mv);m.addEventListener('pointerup',upf);m.addEventListener('pointercancel',upf)}));
   $('#messReset')?.addEventListener('click',()=>{mks.forEach((m,i)=>m.setAttribute('style',init[i]));tick()})})();
@@ -525,6 +525,9 @@ function curSection(){let c='top';$$('main section[id],main [id="links"]')?.forE
     if(location.hash==='#case-sleep'){location.replace(CASE_URL);return}
     const c1=$('.c1 .card-in');
     if(c1){c1.style.cursor='pointer';c1.addEventListener('click',e=>{if(e.target.closest('a'))return;location.href=CASE_URL})}
+    // Card 3 (Bose x Noise Master Buds): the whole card opens the launch page in a new tab
+    const c3=$('.c3 .card-in'),c3a=$('.c3 .c-link');
+    if(c3&&c3a){c3.style.cursor='pointer';c3.addEventListener('click',e=>{if(e.target.closest('a'))return;window.open(c3a.href,'_blank','noopener')})}
     document.addEventListener('click',e=>{const a=e.target.closest('a[href="#case-sleep"]');if(a){e.preventDefault();location.href=CASE_URL}},true);
     return}
   let lastY=0;
@@ -606,3 +609,8 @@ clocks();setInterval(clocks,15000);
 (function(){const el=$('#bigname');const parts=[['Priyanka',''],['Yadav','it']];parts.forEach(([w,c],k)=>{const g=document.createElement('span');g.style.display='inline-flex';[...w].forEach(ch=>{const s=document.createElement('span');s.textContent=ch;if(c)s.className=c;s.addEventListener('pointerenter',()=>pluck(scale[(k*8+w?.indexOf(ch))%scale.length]/2,.06));g.appendChild(s)});el?.appendChild(g)})})();
 if($('#year'))$('#year').textContent=new Date().getFullYear();
 })();
+
+/* ---------- spray wall nozzle pills: fade the edges that have more to scroll ---------- */
+(function(){const s=document.querySelector('#wall .sizes');if(!s)return;
+  function fade(){const m=s.scrollWidth-s.clientWidth;s.style.setProperty('--fl',m>2&&s.scrollLeft>4?1:0);s.style.setProperty('--fr',m>2&&s.scrollLeft<m-4?1:0)}
+  s.addEventListener('scroll',fade,{passive:true});addEventListener('resize',fade);addEventListener('load',fade);fade()})();

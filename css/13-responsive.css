@@ -61,3 +61,73 @@
   [data-rv]{opacity:1;transform:none;filter:none}
   .split .ch>span{transform:none}
 }
+
+/* ============ Mobile polish (Street edition) ============ */
+
+/* Neon / sprayed headings: the spray-in clip ended too tight, so the glow was cut into a box */
+@keyframes sprayin{from{clip-path:inset(-60% 100% -100% 0);filter:blur(8px)}to{clip-path:inset(-60% -30% -100% -30%);filter:blur(0)}}
+@keyframes sprayin2{from{clip-path:inset(-60% 100% -100% 0)}to{clip-path:inset(-60% -30% -100% -30%)}}
+[data-edition="street"] .neon.spr.in{animation:sprayinNeon 1.15s ease-out both}
+@keyframes sprayinNeon{0%{clip-path:inset(-60% 100% -100% 0);filter:blur(8px)}99%{clip-path:inset(-60% -30% -100% -30%);filter:blur(0)}100%{clip-path:none;filter:none}}
+
+/* Spray wall nozzle pills: same pill style as "Same data, new story" chips */
+[data-edition="street"] .sizes{gap:12px;flex-wrap:nowrap}
+[data-edition="street"] .sizes button{flex:none;display:inline-flex;align-items:center;height:44px;padding:0 18px;border-radius:11px;border:2.5px solid var(--s-cream);font-size:16px;line-height:1;letter-spacing:.04em;white-space:nowrap;box-shadow:0 4px 0 rgba(0,0,0,.5);transition:transform .3s var(--spring),background .25s,color .25s,box-shadow .25s}
+[data-edition="street"] .sizes button:nth-child(3n){transform:rotate(-2deg)}
+[data-edition="street"] .sizes button:nth-child(4n){transform:rotate(1.5deg)}
+[data-edition="street"] .sizes button:hover{transform:translateY(-3px) rotate(0deg);box-shadow:0 7px 0 rgba(0,0,0,.5)}
+[data-edition="street"] .sizes button[aria-pressed="true"]{background:var(--s-yel);border-color:var(--s-cream);color:#141312}
+[data-edition="street"] #wallClear{margin-left:0!important}
+
+@media (max-width:900px){
+  /* 1. Hero: centre everything once it stacks */
+  .sth-left{text-align:center;display:flex;flex-direction:column;align-items:center}
+  .o1-name span+span{padding-left:0}
+  .o1-line{margin-inline:auto;max-width:26em}
+  .worked p{text-align:center}
+  .worked div{justify-content:center}
+
+  /* 3. Toolbox: smaller tags so the pile sits in the lower part of the box */
+  [data-edition="street"] .chip{font-size:13px;padding:7px 12px 7px 8px;gap:7px;border-width:2px;border-radius:8px;box-shadow:0 3px 0 rgba(0,0,0,.5)}
+  [data-edition="street"] .chip .ti{width:17px;height:17px;border-radius:5px}
+  [data-edition="street"] .chip.sk{font-size:13px;padding:7px 12px}
+  [data-edition="street"] .chip.big{font-size:17px;padding:9px 16px}
+  .box{height:clamp(440px,66svh,600px)}
+
+  /* 4. Spray wall pills: one line, scroll sideways, edges fade like the "Same data, new story" chips */
+  [data-edition="street"] .wall-tools{padding:18px 18px 8px;row-gap:12px}
+  [data-edition="street"] .swatches{width:100%;justify-content:space-between}
+  [data-edition="street"] .sizes{--fl:0;--fr:1;width:calc(100% + 36px);margin:0 -18px;padding:10px 18px 16px;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-padding-inline:18px;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 calc(var(--fl) * 64px),#000 calc(100% - var(--fr) * 64px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 calc(var(--fl) * 64px),#000 calc(100% - var(--fr) * 64px),transparent 100%)}
+  [data-edition="street"] .sizes::-webkit-scrollbar{display:none}
+
+  /* 5. Make a mess: stickers in a ring around the headline, all visible */
+  .mess-h{font-size:clamp(50px,14vw,64px)}
+  .mk{left:var(--mx,var(--x));top:var(--my,var(--y));white-space:nowrap;transform:translate(-50%,-50%) rotate(var(--r,0deg)) scale(.82);transform-origin:50% 50%}
+  .mk:nth-of-type(1){--mx:34%;--my:9%}   /* I love Figma */
+  .mk:nth-of-type(2){--mx:62%;--my:20%}  /* Gurugram */
+  .mk:nth-of-type(3){--mx:86%;--my:9%}   /* heart */
+  .mk:nth-of-type(4){--mx:14%;--my:23%}  /* EN / hindi */
+  .mk:nth-of-type(5){--mx:12%;--my:41%}  /* spray can */
+  .mk:nth-of-type(6){--mx:88%;--my:39%}  /* NIFT */
+  .mk:nth-of-type(7){--mx:38%;--my:79%}  /* Hii folks */
+  .mk:nth-of-type(8){--mx:12%;--my:61%}  /* UX */
+  .mk:nth-of-type(9){--mx:56%;--my:91%}  /* one more iteration */
+  .mk:nth-of-type(10){--mx:88%;--my:60%} /* 3+ */
+  .mk:nth-of-type(11){--mx:84%;--my:77%} /* Simple, with AI */
+  .mk:nth-of-type(12){--mx:13%;--my:83%} /* AI */
+}
+
+/* ============ Work + Experience polish (Street edition) ============ */
+/* "Crafted things." centred in every view */
+[data-edition="street"] .wk-title{justify-content:center;text-align:center}
+[data-edition="street"] .sth2:has(.chrome){justify-content:center}
+
+/* Experience: job titles in the tag font (stencil), one line, sized to fill the space */
+[data-edition="street"] .xo1 .xr h3{font-family:var(--sten);font-weight:800;text-transform:uppercase;letter-spacing:.03em;font-size:clamp(30px,3.3vw,50px);line-height:1.05;white-space:nowrap;margin:0 0 8px;color:var(--s-cream)}
+@media (max-width:900px){
+  [data-edition="street"] .xo1 .xr h3{font-size:clamp(15px,4.5vw,30px);letter-spacing:.02em}
+}
+/* Experience: coloured logos on cream chips (same as "Worked with"), not white */
+[data-edition="street"] .xo1 .xl .logo{filter:none;box-sizing:border-box;width:128px;height:56px;max-width:none;padding:13px 16px;background-color:#f4f1ea;background-origin:content-box;background-position:center;border-radius:10px;box-shadow:0 4px 0 rgba(0,0,0,.5)}
+[data-edition="street"] .xo1 .xl .lg-nykaa{height:56px;padding:9px 16px}
+[data-edition="street"] .xo1 .xl .lg-noise,[data-edition="street"] .xo1 .xl .lg-nykaa,[data-edition="street"] .xo1 .xl .lg-myntra,[data-edition="street"] .xo1 .xl .lg-times{aspect-ratio:auto}
