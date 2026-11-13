@@ -281,6 +281,15 @@ html[data-edition="street"] body{background:radial-gradient(120% 90% at 50% 40%,
 [data-edition="street"] .ticket::before,[data-edition="street"] .ticket::after{background:#141312}
 [data-edition="street"] .ticket #tNo{color:var(--s-grn)}
 [data-edition="street"] .stamp{font-family:var(--tag);color:var(--s-red);border-color:var(--s-red)}
+/* readability: form inputs, step names and ticket values use the body sans (same as "Bachelor of Design, 2021 to 2024") */
+[data-edition="street"] .step input,[data-edition="street"] .step textarea{font-family:var(--sans);font-weight:400;color:var(--s-cream)}
+[data-edition="street"] .step input::placeholder,[data-edition="street"] .step textarea::placeholder{font-family:var(--sans);color:rgba(241,236,226,.45)}
+[data-edition="street"] .f-steps li{font-family:var(--sans);font-weight:500;font-size:15px;text-transform:none;letter-spacing:0}
+[data-edition="street"] .f-steps li.on{font-weight:700}
+[data-edition="street"] .ticket{font-family:var(--sans);text-transform:none;letter-spacing:0}
+[data-edition="street"] .ticket div small{font-weight:400;font-size:13px}
+[data-edition="street"] .ticket div b{font-weight:700;font-size:16px}
+[data-edition="street"] .ticket div b.empty{font-weight:400}
 .st-write{display:flex;flex-direction:column;align-items:center;gap:22px;padding:10vh 0 2vh;text-align:center}
 .st-write .hand{font-size:clamp(28px,3vw,40px);color:var(--s-grn);transform:rotate(-3deg)}
 .st-write .xl{--rt:-2deg}
