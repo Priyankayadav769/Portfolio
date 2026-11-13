@@ -94,10 +94,11 @@
   [data-edition="street"] .chip.big{font-size:17px;padding:9px 16px}
   .box{height:clamp(440px,66svh,600px)}
 
-  /* 4. Spray wall pills: wrap onto a second row instead of squashing, with room under them */
-  [data-edition="street"] .wall-tools{padding:18px 18px 22px;row-gap:18px}
+  /* 4. Spray wall pills: one line, scroll sideways, edges fade like the "Same data, new story" chips */
+  [data-edition="street"] .wall-tools{padding:18px 18px 8px;row-gap:12px}
   [data-edition="street"] .swatches{width:100%;justify-content:space-between}
-  [data-edition="street"] .sizes{width:100%;flex-wrap:wrap;gap:14px 12px;padding-top:4px}
+  [data-edition="street"] .sizes{--fl:0;--fr:1;width:calc(100% + 36px);margin:0 -18px;padding:10px 18px 16px;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-padding-inline:18px;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 calc(var(--fl) * 64px),#000 calc(100% - var(--fr) * 64px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 calc(var(--fl) * 64px),#000 calc(100% - var(--fr) * 64px),transparent 100%)}
+  [data-edition="street"] .sizes::-webkit-scrollbar{display:none}
 
   /* 5. Make a mess: stickers in a ring around the headline, all visible */
   .mess-h{font-size:clamp(50px,14vw,64px)}

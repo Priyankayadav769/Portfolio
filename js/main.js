@@ -606,3 +606,8 @@ clocks();setInterval(clocks,15000);
 (function(){const el=$('#bigname');const parts=[['Priyanka',''],['Yadav','it']];parts.forEach(([w,c],k)=>{const g=document.createElement('span');g.style.display='inline-flex';[...w].forEach(ch=>{const s=document.createElement('span');s.textContent=ch;if(c)s.className=c;s.addEventListener('pointerenter',()=>pluck(scale[(k*8+w?.indexOf(ch))%scale.length]/2,.06));g.appendChild(s)});el?.appendChild(g)})})();
 if($('#year'))$('#year').textContent=new Date().getFullYear();
 })();
+
+/* ---------- spray wall nozzle pills: fade the edges that have more to scroll ---------- */
+(function(){const s=document.querySelector('#wall .sizes');if(!s)return;
+  function fade(){const m=s.scrollWidth-s.clientWidth;s.style.setProperty('--fl',m>2&&s.scrollLeft>4?1:0);s.style.setProperty('--fr',m>2&&s.scrollLeft<m-4?1:0)}
+  s.addEventListener('scroll',fade,{passive:true});addEventListener('resize',fade);addEventListener('load',fade);fade()})();
