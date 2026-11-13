@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="css/11-nav-polish.css">
 <link rel="stylesheet" href="css/12-review-controller.css">
 <link rel="stylesheet" href="css/13-responsive.css">
+<link rel="stylesheet" href="css/14-normal-mode.css">
 </head>
 <body>
 <div class="amb" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -35,7 +36,7 @@
     <p class="ck">Welcome, pick your edition</p>
     <h2 id="chTitle">Same work, two <em>moods.</em></h2>
     <div class="ch-opts">
-      <button class="o-gold" data-pick="gold"><span class="art" aria-hidden="true"></span><kbd>N</kbd><b>Normal</b><span class="d">Warm light, frosted glass and gold.</span></button>
+      <button class="o-gold" data-pick="gold"><span class="art" aria-hidden="true"></span><kbd>N</kbd><b>Normal</b><span class="d">Clean, bright and a little pink.</span></button>
       <button class="o-street" data-pick="street"><span class="lab" aria-hidden="true">Drop 001</span><span class="art" aria-hidden="true">py!</span><kbd>S</kbd><b>Street</b><span class="d">Spray paint, stickers and a lot of red.</span></button>
     </div>
     <p class="cf">You can switch any time from the top bar.</p>
@@ -101,7 +102,7 @@
   </div>
 </section>
 <section class="st-only io-o1 wrap o1-after" aria-label="About, short">
-  <figure class="polaroid"><i class="tape tc"></i><div class="rf"><img data-portrait alt="Portrait of Priyanka Yadav"></div><figcaption>that’s me, hii!</figcaption></figure>
+  <figure class="polaroid"><i class="tape tc"></i><div class="rf"><img data-portrait src="assets/images/photos/gurugram-portrait.webp" alt="Portrait of Priyanka Yadav"></div><figcaption>that’s me, hii!</figcaption></figure>
   <div><h2 class="graf sth2 sm"><span class="cream spr">That’s the</span><span class="redg spr" data-drips="2">reel.</span></h2>
     <p class="pdesc">I’m Priyanka, Assistant Manager, Product Designer at Noise in Gurugram. NIFT graduate, three years in, and I use AI to get to simple faster.</p>
     <div class="ctas"><a class="sb yellow" href="#experience">Read my story</a><a class="sb dark" href="https://www.behance.net/priyankayadav40" target="_blank" rel="noopener">All projects on Behance</a></div>
@@ -111,7 +112,7 @@
 
 <!-- ============ INTRO OPTION 2: pick your path ============ -->
 <section class="st-only io-o2 wrap o2-hero" id="homeO2" aria-label="Home, pick your path">
-  <figure class="o2-pol"><i class="tape tc" style="--tw:70px"></i><div class="rf"><img data-portrait alt="Portrait of Priyanka Yadav"></div><figcaption>Priyanka, Gurugram</figcaption></figure>
+  <figure class="o2-pol"><i class="tape tc" style="--tw:70px"></i><div class="rf"><img data-portrait src="assets/images/photos/gurugram-portrait.webp" alt="Portrait of Priyanka Yadav"></div><figcaption>Priyanka, Gurugram</figcaption></figure>
   <h1 class="graf o2-hi"><span class="l1 cream spr">Hii, I’m Priyanka.</span><span class="l2"><span class="cream spr">I design</span><span class="rot" aria-live="polite"><span class="w go" id="rotWord">apps.</span></span></span></h1>
   <p class="o2-sub">Product designer at Noise, Gurugram. What brings you here?</p>
   <div class="paths"><button class="path hire" data-path="hire" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V4h6v3M3 12h18"/></svg><b>I’m hiring</b><span>Experience and work, the one-minute version.</span><i aria-hidden="true">→</i></button><button class="path proj" data-path="proj" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-1L19 8l-3-3L5 16z"/><path d="M14 7l3 3"/></svg><b>I’ve got a project</b><span>Start a brief in four short steps.</span><i aria-hidden="true">→</i></button><button class="path look" data-path="look" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4" stroke-linecap="round"/></svg><b>Just looking around</b><span>Spray the wall, peel some stickers.</span><i aria-hidden="true">→</i></button></div>
@@ -144,7 +145,7 @@
       <p class="hint2">scroll to see the work <b style="color:var(--s-red)">↓</b></p>
     </div>
     <figure class="sth-photo pol">
-      <div class="polaroid hero-pol"><i class="tape tc"></i><div class="rf nat"><img data-portrait alt="Portrait of Priyanka Yadav"></div><p class="pcap">that’s me, hii!</p></div>
+      <div class="polaroid hero-pol"><i class="tape tc"></i><div class="rf nat"><img data-portrait src="assets/images/photos/gurugram-portrait.webp" alt="Portrait of Priyanka Yadav"></div><p class="pcap">that’s me, hii!</p></div>
       
     </figure>
   </div>
@@ -181,148 +182,124 @@
   </div>
 </section>
 
-<!-- ============ PROLOGUE ============ -->
-<section class="pro gd-only" id="prologue" aria-label="Prologue">
-  <div class="pro-title">
-    <p class="pro-kick">Prologue, best scrolled slowly</p>
-    <h1 class="mega split" id="megaTitle" style="position:relative;z-index:2"><span>Priyanka</span><span><em>Yadav</em></span></h1>
-    <p class="pro-sub" data-rv style="--d:500ms">People. Pixels. <em>A story.</em></p>
-    <div class="pro-ctas" data-rv style="--d:700ms">
-      <button class="play" id="playIntro" data-magnet><b><svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M1 1.5v13l12-6.5L1 1.5Z" fill="currentColor"/></svg></b>Play the intro</button>
-      <small>or scroll at your own pace, or <a href="#home" style="text-decoration:underline;text-underline-offset:3px">skip it</a></small>
-    </div>
-    <div class="scroll-cue" aria-hidden="true"></div>
+<!-- ============ NORMAL MODE: hero ============ -->
+<section class="n-hero gd-only" id="home" aria-label="Home">
+  <div class="n-hero-in">
+    <p class="n-kick" data-nr="wipe">UI/UX designer | 3+ years | Gurugram</p>
+    <h1 class="n-h1" data-nchars data-scatter>Hii folks! I am <span class="n-accent">Priyanka Yadav</span></h1>
+    <p class="n-hero-sub" data-nr="blur" style="--d:700ms">Product designer at <b>Noise</b>. Apps, design systems, launch pages.</p>
+    <div class="n-ctas" data-nr style="--d:850ms"><a class="n-pill" href="#work">See the work</a><a class="n-pill ghost" href="#contact">Let’s talk</a></div>
   </div>
+</section>
+<div class="n-lens gd-only" id="nLens" aria-hidden="true"><div class="n-lens-in" id="nLensIn"></div></div>
 
-  <div class="pro-track" id="proTrack" style="--n:6">
-    <div class="pro-sticky">
-      <div class="pro-texts">
-        <article class="pt">
-          <p class="ch-no" style="--t:.02"><span>01</span>Home</p>
-          <h2 class="ch-h" style="--t:.06">This is Priyanka. She lives in Gurugram and designs the screens people tap every day.</h2>
-          <p class="ch-p" style="--t:.22">Three years in, she runs UI/UX projects end to end, across B2B and B2C.</p>
-        </article>
-        <article class="pt">
-          <p class="ch-no" style="--t:.02"><span>02</span>Study</p>
-          <h2 class="ch-h" style="--t:.06">It started at NIFT, with a Bachelor of Design, 2021 to 2024.</h2>
-          <p class="ch-p" style="--t:.22">Wireframes, user flows and journey maps. Then the Google UX Design Professional Certificate on top.</p>
-        </article>
-        <article class="pt">
-          <p class="ch-no" style="--t:.02"><span>03</span>First briefs</p>
-          <h2 class="ch-h" style="--t:.06">Her first briefs came from Times Internet and Myntra.</h2>
-          <p class="ch-p" style="--t:.22">Emailers, marketing campaigns and Lottie motion. Then campaign microsites and seasonal launches, laid out from the analytics.</p>
-        </article>
-        <article class="pt">
-          <p class="ch-no" style="--t:.02"><span>04</span>Mumbai</p>
-          <h2 class="ch-h" style="--t:.06">At Nykaa Fashion, she became a full-time UI designer.</h2>
-          <p class="ch-p" style="--t:.22">Landing pages, A/B tests, prototypes, and accessibility checked against WCAG.</p>
-        </article>
-        <article class="pt">
-          <p class="ch-no" style="--t:.02"><span>05</span>Noise</p>
-          <h2 class="ch-h" style="--t:.06">Today she’s Assistant Manager, Product Designer at Noise.</h2>
-          <p class="ch-p" style="--t:.22">The whole design lifecycle, a design system, and apps for iOS, Android and the web. Mentoring interns, scoping with product, building next to engineering.</p>
-        </article>
-        <article class="pt">
-          <p class="ch-no" style="--t:.02"><span>06</span>Now</p>
-          <h2 class="ch-h" style="--t:.06">And she builds with AI.</h2>
-          <p class="ch-p" style="--t:.22">Claude, ChatGPT, Gemini, UX Pilot and Midjourney sit right next to Figma.</p>
-          <p class="ch-q" style="--t:.4">“I design simple things, and use AI to get there faster.”</p>
-        </article>
-      </div>
-
-      <div class="pro-vis" aria-hidden="true">
-        <div class="pv"><figure><span class="halo"></span><div class="arch"><img src="assets/images/photos/gurugram-portrait.webp" alt=""></div><figcaption><em>Gurugram</em>Haryana, India</figcaption></figure></div>
-        <div class="pv"><figure>
-          <svg class="wire" viewBox="0 0 420 400">
-            <rect pathLength="1" x="120" y="20" width="180" height="360" rx="30"/>
-            <line pathLength="1" x1="185" y1="38" x2="235" y2="38"/>
-            <circle class="g" pathLength="1" cx="210" cy="120" r="46"/>
-            <path pathLength="1" d="M150 196h120M150 216h80"/>
-            <rect pathLength="1" x="144" y="240" width="132" height="44" rx="12"/>
-            <rect pathLength="1" x="144" y="296" width="132" height="44" rx="12"/>
-            <path class="g" pathLength="1" d="M300 130c40 0 70 20 80 60M380 190l-10-14M380 190l-16 4"/>
-            <path pathLength="1" d="M40 260c10-30 40-40 70-20"/>
-            <path class="g" pathLength="1" d="M60 90l20 20 30-40"/>
-            <text x="318" y="230">user flow</text>
-            <text x="12" y="300">first wireframe</text>
-          </svg>
-          <div class="cert"><b>G</b><span>Google UX Design Professional Certificate</span></div>
-          <figcaption><em>NIFT</em>Bachelor of Design, 2021–2024</figcaption></figure></div>
-        <div class="pv"><figure>
-          <div class="tiles">
-            <div class="tile"><span class="logo lg-times" role="img" aria-label="Times Internet"></span><small><em>Design intern</em>Emailers, campaigns, Lottie motion. 2023</small></div>
-            <div class="tile"><span class="logo lg-myntra" role="img" aria-label="Myntra"></span><small><em>Creative &amp; curation</em>Microsites and seasonal launches. 2024</small></div>
-          </div>
-          <figcaption><em>Remote, then Bengaluru</em>2023–2024</figcaption></figure></div>
-        <div class="pv"><figure>
-          <div class="ab">
-            <div class="v"><b>A</b><i class="hv"></i><i></i><i style="width:70%"></i><i class="cta"></i><div class="bar"><u style="--w:.55"></u></div></div>
-            <div class="v"><b>B</b><i class="hv"></i><i style="width:80%"></i><i></i><i class="cta"></i><div class="bar"><u style="--w:.86"></u></div></div>
-            <div class="nyk"><span class="logo lg-nykaa" role="img" aria-label="Nykaa Fashion"></span><span>WCAG checked</span></div>
-          </div>
-          <figcaption><em>Mumbai</em>June 2024 to September 2025</figcaption></figure></div>
-        <div class="pv"><figure><span class="glowring"></span><div class="device"><div class="scr"><img src="assets/images/projects/noisefit-sleep-cover.jpg" alt=""></div></div><figcaption><em>NoiseFit</em>Sleep details, redesigned</figcaption></figure></div>
-        <div class="pv"><figure>
-          <div class="orbit">
-            <div class="ring"><span class="ti ti-claude" style="--a:0deg"></span><span class="ti ti-chatgpt" style="--a:60deg"></span><span class="ti ti-gemini" style="--a:120deg"></span><span class="ti ti-uxpilot" style="--a:180deg"></span><span class="ti ti-midjourney" style="--a:240deg"></span><span class="ti ti-html" style="--a:300deg"></span></div>
-            <div class="ring r2"><span class="ti ti-figma" style="--a:30deg"></span><span class="ti ti-xd" style="--a:102deg"></span><span class="ti ti-ps" style="--a:174deg"></span><span class="ti ti-ai" style="--a:246deg"></span><span class="ti ti-framer" style="--a:318deg"></span></div>
-            <div class="core">py</div>
-          </div>
-          <figcaption><em>The toolkit</em>Twelve tools, one designer</figcaption></figure></div>
-      </div>
-
-      <div class="pro-rail" id="proRail"></div>
-      <div class="pro-ctrl"><button class="btn ghost sm" id="pauseIntro">Pause</button><a class="btn gold sm" href="#home" id="skipIntro">Skip intro</a></div>
-    </div>
+<!-- ============ NORMAL MODE: brands ============ -->
+<section class="n-logos gd-only" aria-label="Brands I’ve worked with">
+  <p class="n-label n-center" data-nr="blur">Worked with</p>
+  <div class="n-logo-row">
+    <img class="n-lg l1" src="assets/images/logos/times-internet.webp" alt="Times Internet" data-nr style="--d:0ms">
+    <img class="n-lg l2" src="assets/images/logos/myntra.webp" alt="Myntra" data-nr style="--d:90ms">
+    <img class="n-lg l3" src="assets/images/logos/nykaa-fashion.webp" alt="Nykaa Fashion" data-nr style="--d:180ms">
+    <img class="n-lg l4" src="assets/images/logos/noise.webp" alt="Noise" data-nr style="--d:270ms">
   </div>
 </section>
 
-<!-- ============ HERO ============ -->
-<section class="hero wrap rel gd-only" id="home">
-  <div class="hero-grid">
-    <div>
-      <p class="kick" data-rv><i></i>UI/UX designer, 3+ years, Gurugram</p>
-      <h2 class="name" id="strum" aria-label="Priyanka Yadav"><span class="ln">Priyanka</span><span class="ln"><em>Yadav</em></span></h2>
-      <p class="tagline" data-rv style="--d:150ms">Designing for people, <em>building with AI.</em></p>
-      <div class="hero-ctas" data-rv style="--d:260ms">
-        <a class="btn gold" href="#contact" data-magnet>Start a project</a>
-        <a class="btn ghost" href="#work" data-magnet>See the work</a>
-      </div>
-      <p class="hint" data-rv style="--d:360ms"><svg viewBox="0 0 22 14" fill="none" aria-hidden="true"><path d="M1 7c2.5-5 5-5 7 0s4.5 5 7 0 4.5-5 6 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Run your cursor across the name to strum it</p>
+<!-- ============ NORMAL MODE: quick links ============ -->
+<nav class="n-quick gd-only" aria-label="Quick links">
+  <a class="n-chip" href="https://www.behance.net/priyankayadav40" target="_blank" rel="noopener" data-nr style="--d:0ms"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8.2 11.3c1.1-.5 1.7-1.3 1.7-2.5C9.9 6.5 8.2 5.6 6 5.6H0v12.8h6.2c2.3 0 4.5-1.1 4.5-3.7 0-1.6-.8-2.8-2.5-3.4ZM2.8 7.8h2.6c1 0 1.9.3 1.9 1.4 0 1.1-.7 1.5-1.7 1.5H2.8V7.8Zm2.9 8.4H2.8v-3.5h3c1.2 0 2 .5 2 1.8 0 1.3-.9 1.7-2.1 1.7ZM18.4 8.2c-3 0-5 2.2-5 5.1 0 3 1.9 5.1 5 5.1 2.3 0 3.8-1 4.5-3.3h-2.3c-.3.8-1.3 1.3-2.1 1.3-1.6 0-2.4-.9-2.4-2.5H23c.2-3.1-1.6-5.7-4.6-5.7Zm-2.3 4c.1-1.3.9-2.1 2.2-2.1 1.3 0 2 .8 2.1 2.1h-4.3ZM15.6 5.9h5.4v1.3h-5.4z"/></svg>Behance</a>
+  <a class="n-chip" href="mailto:priyankayadav76047@gmail.com" data-nr style="--d:60ms"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="m3 6 9 7 9-7" stroke="currentColor" stroke-width="2"/></svg>Email</a>
+  <a class="n-chip" href="https://www.linkedin.com/search/results/people/?keywords=Priyanka%20Yadav%20Noise" target="_blank" rel="noopener" data-nr style="--d:120ms"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.5h4v11H3v-11Zm6.5 0h3.8v1.6c.6-1 1.9-1.9 3.8-1.9 4 0 4.7 2.5 4.7 5.8v5.5h-4v-4.9c0-1.2 0-2.7-1.7-2.7s-2 1.3-2 2.6v5h-4v-11Z"/></svg>LinkedIn</a>
+  <a class="n-chip" href="#work" data-nr style="--d:180ms"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v16M4 12h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>The work</a>
+  <a class="n-chip" href="#toolbox" data-nr style="--d:240ms"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Toolkit</a>
+  <a class="n-chip" href="#wall" data-nr style="--d:300ms"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="7" y="8" width="10" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M10 8V5h4v3M16 3h1M19 2v1M19 5h1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Spray wall</a>
+  <a class="n-chip pink" href="#contact" data-nr style="--d:360ms"><svg viewBox="0 0 24 22" aria-hidden="true"><path fill="currentColor" d="M12 21.6 10.3 20C4.2 14.5 0 10.7 0 6.2 0 2.6 2.8 0 6.4 0c2 0 4 .9 5.6 2.4C13.6.9 15.6 0 17.6 0 21.2 0 24 2.6 24 6.2c0 4.5-4.2 8.3-10.3 13.8Z"/></svg>Say hii</a>
+</nav>
+
+<!-- ============ NORMAL MODE: about ============ -->
+<section class="n-about gd-only" id="about" aria-label="About">
+  <p class="n-statement" data-nwords>Three years in, <b>I manage UI/UX projects end to end across B2B and B2C</b>, mentoring interns, scoping with product, coordinating closely with engineering and aligning with the business team. <b>Less about managing tasks now, more about owning results.</b></p>
+</section>
+
+<!-- ============ NORMAL MODE: profile ============ -->
+<section class="n-profile gd-only" aria-label="Profile">
+  <div class="n-col">
+    <div class="n-blk" data-nr><span class="n-lbl">About</span><p>Assistant Manager, Product Designer at Noise, Gurugram. NIFT graduate.</p></div>
+    <div class="n-blk" data-nr style="--d:90ms"><span class="n-lbl">Brands worked with</span>
+      <div class="n-minilogos"><span title="Noise"><img src="assets/images/logos/noise.webp" alt="Noise"></span><span title="Nykaa Fashion"><img src="assets/images/logos/nykaa-fashion.webp" alt="Nykaa Fashion"></span><span title="Myntra"><img src="assets/images/logos/myntra.webp" alt="Myntra"></span><span title="Times Internet"><img src="assets/images/logos/times-internet.webp" alt="Times Internet"></span></div></div>
+    <div class="n-blk" data-nr style="--d:180ms"><span class="n-lbl">Focus</span><ul><li>Mobile app design</li><li>Design systems</li><li>Campaign landing pages</li></ul></div>
+    <div class="n-blk" data-nr style="--d:270ms"><span class="n-lbl">Platforms</span><p><b data-count="3">0</b> platforms: iOS, Android and the web</p></div>
+  </div>
+  <div class="n-visual" data-nr="blur" style="--d:120ms">
+    <svg class="n-hex" viewBox="0 -50 470 480" role="img" aria-label="Portrait of Priyanka Yadav">
+      <defs><mask id="nPortraitMask" maskUnits="userSpaceOnUse" x="0" y="-50" width="470" height="480">
+        <rect x="0" y="-50" width="470" height="265" fill="#fff"/>
+        <path d="M95 40 L375 40 L440 215 L375 390 L95 390 L30 215 Z" fill="#fff" stroke="#fff" stroke-width="60" stroke-linejoin="round"/>
+      </mask></defs>
+      <path d="M95 40 L375 40 L440 215 L375 390 L95 390 L30 215 Z" fill="#fb4179" stroke="#fb4179" stroke-width="60" stroke-linejoin="round"/>
+      <image href="assets/images/photos/gurugram-portrait.webp" x="14" y="-43" width="442" height="463" mask="url(#nPortraitMask)"/>
+    </svg>
+    <span class="n-hello" aria-hidden="true">that’s me, hii!</span>
+    <span class="n-dot" style="left:14%;top:12%;--s:7px"></span><span class="n-dot p" style="left:80%;top:6%;--s:9px;--dl:-2s"></span><span class="n-dot" style="left:88%;top:30%;--s:6px;--dl:-1s"></span><span class="n-dot" style="left:6%;top:42%;--s:10px;--dl:-3s"></span><span class="n-dot p" style="left:20%;top:2%;--s:5px;--dl:-4s"></span><span class="n-dot" style="left:92%;top:58%;--s:7px;--dl:-2.5s"></span>
+  </div>
+  <div class="n-col r">
+    <div class="n-stat" data-nr><span class="n-lbl">Years of<br>designing</span><strong><span data-count="3">0</span>+</strong></div>
+    <div class="n-blk" data-nr style="--d:90ms"><div class="n-bubble">I design simple things, and use AI to get there faster.</div><div class="n-ava">PY</div></div>
+    <div class="n-badge" data-nr style="--d:180ms"><span class="g" aria-hidden="true">G</span><p>Google UX Design Professional Certificate</p></div>
+    <div class="n-stat" data-nr style="--d:270ms"><span class="n-lbl">Features<br>shipped</span><strong><span data-count="50">0</span>+</strong></div>
+  </div>
+</section>
+
+<!-- ============ NORMAL MODE: skills strip ============ -->
+<div class="n-marq gd-only" aria-hidden="true"><div class="n-marq-row"><span>UI / UX</span><span class="p">Design systems</span><span>Mobile apps</span><span>Landing pages</span><span class="p">Prototyping</span><span>User research</span><span>Wireframes</span><span class="p">AI tools</span><span>Motion</span><span>Usability tests</span><span class="p">Responsive web</span><span>Journey maps</span><span>UI / UX</span><span class="p">Design systems</span><span>Mobile apps</span><span>Landing pages</span><span class="p">Prototyping</span><span>User research</span><span>Wireframes</span><span class="p">AI tools</span><span>Motion</span><span>Usability tests</span><span class="p">Responsive web</span><span>Journey maps</span></div></div>
+
+<!-- ============ NORMAL MODE: how I work ============ -->
+<section class="n-slogans gd-only" id="howIWork" aria-label="How I work" style="--n:3">
+  <div class="n-sl-sticky">
+    <p class="n-label n-center">How I work</p>
+    <div class="n-sl-stage">
+      <p class="n-sl" data-nchars="manual">I design simple things, <span class="n-accent">with AI.</span></p>
+      <p class="n-sl" data-nchars="manual">People. Pixels. <span class="n-accent">Purpose.</span></p>
+      <p class="n-sl" data-nchars="manual">Design. Ship. <span class="n-accent">Repeat.</span></p>
     </div>
-    <figure class="smudge" id="smudgeFig" data-rv style="--d:200ms">
-      <div class="frame"><canvas id="smudge" aria-label="Portrait of Priyanka Yadav. Drag to smudge it." role="img"></canvas></div>
-      <span class="sticker">Hii!</span>
-      <figcaption class="sm-hint"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V10m0-1.5a1.5 1.5 0 0 1 3 0V11m0-1a1.5 1.5 0 0 1 3 0v4.5a6 6 0 0 1-6 6h-.6a6 6 0 0 1-4.7-2.3L4.4 15a1.5 1.5 0 0 1 2.3-1.9L9 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Smudge the picture</b> drag on it</figcaption>
-    </figure>
-  </div>
-  <div class="hero-foot" data-rv>
-    <span>Now: <b>Assistant Manager, Product Designer at Noise</b></span>
-    <span>Gurugram, <b id="heroClock">--:--</b> IST</span>
+    <div class="n-sl-dots" aria-hidden="true"><i></i><i></i><i></i></div>
   </div>
 </section>
-
-<!-- ============ ABOUT ============ -->
-<section class="about wrap rel gd-only" id="about" aria-label="About">
-  <p class="statement" id="statement">Three years in, <b>I manage UI/UX projects end to end across B2B and B2C</b>, mentoring interns, scoping with product, coordinating closely with engineering, and aligning with the business team. <b>Less about managing tasks now, more about owning results.</b></p>
-  <div class="stats">
-    <div class="stat" data-rv><strong><span data-count="3">0</span><sup>+</sup></strong><span>Years designing products</span></div>
-    <div class="stat" data-rv style="--d:100ms"><strong data-count="4">0</strong><span>Brands worked with</span></div>
-    <div class="stat" data-rv style="--d:200ms"><strong data-count="12">0</strong><span>Tools in daily rotation</span></div>
-    <div class="stat" data-rv style="--d:300ms"><strong data-count="2024">0</strong><span>Graduated from NIFT</span></div>
-  </div>
-  <div class="focus" data-rv><span>Mobile app design</span><span>Design systems</span><span>Campaign landing pages</span></div>
-</section>
-
-<div class="marq gd-only" aria-hidden="true">
-  <div class="mq-row"><span>Mobile apps <i></i> Design systems <i></i> <em>Landing pages</em> <i></i> Prototypes <i></i></span><span>Mobile apps <i></i> Design systems <i></i> <em>Landing pages</em> <i></i> Prototypes <i></i></span></div>
-  <div class="mq-row rev"><span>Simple things, designed with care <i></i> built with AI <i></i></span><span>Simple things, designed with care <i></i> built with AI <i></i></span></div>
-</div>
 
 <!-- ============ WORK ============ -->
 <section class="sec rel" id="work">
-  <div class="sh gd-only wrap">
-    <div><p class="lbl" data-rv>Selected work</p><h2 class="split gd-only">Crafted digital <em>experiences.</em></h2><h2 class="st-only graf sth2"><span class="chrome spr" data-drips="3" data-dc="#cfcfcf">Crafted</span><span class="redg spr" data-drips="2">things.</span></h2><span class="st-only redline"></span></div>
+  <div class="n-work gd-only">
+    <div class="n-head row">
+      <p class="n-label" data-nr="blur">Selected work</p>
+      <div class="n-row"><h2 data-nchars>Crafted digital experiences</h2><p class="n-blurb" data-nr="blur" style="--d:160ms">Apps, design systems and launch pages: shipped work with strong visual direction, clean interaction and systems behind it.</p></div>
+    </div>
+    <div class="n-grid">
+      <a class="n-project n-wide" href="case-studies/noisefit-sleep.html" data-nr aria-label="NoiseFit sleep details page revamp, read the case study">
+        <div class="n-stage"><div class="n-shade"></div>
+          <div class="n-phone"><img src="assets/images/projects/noisefit-phone-frame.webp" alt=""><video class="n-screen" muted loop playsinline preload="metadata" poster="assets/images/projects/noisefit-sleep-motion-poster.jpg" aria-hidden="true"><source src="assets/videos/noisefit-sleep-motion.mp4" type="video/mp4"></video></div>
+          <span class="n-tag">● Shipped</span></div>
+        <div class="n-caption"><div><p class="n-client">NoiseFit app · 01</p><h3>NoiseFit sleep details page revamp</h3></div><span class="n-arrow" aria-hidden="true"><svg class="a" viewBox="0 0 49 49" fill="none" aria-hidden="true"><path d="M14.3621 24.2094L34.3598 24.5123M26.2396 32.3902L34.3598 24.5123L26.4819 16.392" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><svg class="b" viewBox="0 0 49 49" fill="none" aria-hidden="true"><path d="M14.3621 24.2094L34.3598 24.5123M26.2396 32.3902L34.3598 24.5123L26.4819 16.392" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <p class="n-desc">A calmer way to read a night’s sleep: one score up top, and the contributors that shaped it right below.</p>
+        <ul class="n-tags"><li>Mobile app</li><li>Data visualisation</li><li>Design system</li></ul>
+      </a>
+      <a class="n-project n-pastel" href="https://www.behance.net/priyankayadav40" target="_blank" rel="noopener" data-nr aria-label="Noise Junior purchase review, opens Behance">
+        <div class="n-stage"><div class="n-phone"><img src="assets/images/projects/noise-junior-phone.webp" alt="Noise Junior purchase review screen"></div><img class="n-sticker" src="assets/images/projects/noise-junior-sticker.webp" alt="">
+          <span class="n-tag">Kids product</span></div>
+        <div class="n-caption"><div><p class="n-client">Noise Junior · 02</p><h3>Noise junior purchase review</h3></div><span class="n-arrow" aria-hidden="true"><svg class="a" viewBox="0 0 49 49" fill="none" aria-hidden="true"><path d="M14.3621 24.2094L34.3598 24.5123M26.2396 32.3902L34.3598 24.5123L26.4819 16.392" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><svg class="b" viewBox="0 0 49 49" fill="none" aria-hidden="true"><path d="M14.3621 24.2094L34.3598 24.5123M26.2396 32.3902L34.3598 24.5123L26.4819 16.392" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <p class="n-desc">A bright, friendly review moment for the Noise Jr. Champ 3: one product, one question, five stars from poor to great.</p>
+        <ul class="n-tags"><li>Mobile app</li><li>Post-purchase flow</li><li>Kids product</li></ul>
+      </a>
+      <a class="n-project n-light" href="https://www.gonoise.com/a/h/noise-master-buds-2-truly-wireless-earbuds" target="_blank" rel="noopener" data-nr style="--d:120ms" aria-label="Bose X Noise Master Buds launch page, opens gonoise.com">
+        <div class="n-stage"><div class="n-phone"><img src="assets/images/projects/master-buds-phone-frame.webp" alt=""><div class="n-screen-crop"><video class="n-screen" muted loop playsinline preload="metadata" poster="assets/images/projects/master-buds-motion-poster.jpg" aria-hidden="true"><source src="assets/videos/master-buds-motion.mp4" type="video/mp4"></video></div></div>
+          <span class="n-tag">Launch page</span></div>
+        <div class="n-caption"><div><p class="n-client">gonoise.com · 03</p><h3>Bose X Noise master buds</h3></div><span class="n-arrow" aria-hidden="true"><svg class="a" viewBox="0 0 49 49" fill="none" aria-hidden="true"><path d="M14.3621 24.2094L34.3598 24.5123M26.2396 32.3902L34.3598 24.5123L26.4819 16.392" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><svg class="b" viewBox="0 0 49 49" fill="none" aria-hidden="true"><path d="M14.3621 24.2094L34.3598 24.5123M26.2396 32.3902L34.3598 24.5123L26.4819 16.392" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <p class="n-desc">The launch page for Master Buds with sound by Bose: big imagery, highlight carousels and a clear path to buy.</p>
+        <ul class="n-tags"><li>Campaign landing page</li><li>Responsive web</li><li>Launch</li></ul>
+      </a>
+    </div>
+    <div class="n-more">
+      <p data-nchars data-wave>Curious for more? Dig into the rest of my work.</p>
+      <a class="n-pill big" href="https://www.behance.net/priyankayadav40" target="_blank" rel="noopener" data-nr style="--d:120ms">View all projects</a>
+    </div>
   </div>
   <div class="wk-box wrap">
   <div class="wk-panel st-only">
@@ -387,8 +364,36 @@
 <!-- ============ EXPERIENCE ============ -->
 <section class="sec wrap rel" id="experience">
   <div class="sh">
-    <div><p class="lbl gd-only" data-rv>Experience</p><h2 class="split gd-only">Where I’ve <em>worked.</em></h2><h2 class="st-only graf sth2 sm"><span class="cream spr">Where I’ve</span><span class="redg spr" data-drips="2">worked.</span></h2></div>
+    <div><h2 class="st-only graf sth2 sm"><span class="cream spr">Where I’ve</span><span class="redg spr" data-drips="2">worked.</span></h2></div>
     <p data-rv style="--d:150ms">Four brands, from emailers to a full app design system. Most recent first.</p>
+  </div>
+  <div class="n-xp gd-only">
+    <div class="n-head center"><p class="n-label pink" data-nr="blur">Experience</p><h2 data-nchars>Where I’ve worked</h2><p class="n-blurb" data-nr="blur" style="--d:160ms">Four brands, from emailers to a full app design system. Most recent first.</p></div>
+    <div class="n-line" id="nXp">
+      <div class="n-rail" aria-hidden="true"></div><div class="n-rail-fill" id="nRailFill" aria-hidden="true"></div>
+      <ol>
+      <li class="n-xi cur" data-nr>
+        <div class="n-xl"><div class="n-lgw"><img class="n-xlg noise" src="assets/images/logos/noise.webp" alt="Noise"></div><span class="n-meta">Gurugram | Sep 2025 – Present</span></div>
+        <span class="n-node" aria-hidden="true"></span>
+        <div class="n-xr"><h3>Assistant Manager, Product Designer</h3><div class="n-role"><span class="n-dur now" data-start="2025-09" data-end="now"></span><span class="n-type">Current role</span></div><div class="n-chips"><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12a8 8 0 0 1 13.7-5.6M20 12a8 8 0 0 1-13.7 5.6M18 3v4h-4M6 21v-4h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Design lifecycle</span><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Design systems</span><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2.5" stroke="currentColor" stroke-width="2"/><path d="M11 18h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>iOS, Android &amp; web</span><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="8" r="3.5" stroke="currentColor" stroke-width="2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 4.5a3.5 3.5 0 0 1 0 7M21 20c0-2.6-1.6-4.8-4-5.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Noise Junior</span><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Explorer Hub</span></div></div>
+      </li>
+      <li class="n-xi" data-nr>
+        <div class="n-xl"><div class="n-lgw"><img class="n-xlg nykaa" src="assets/images/logos/nykaa-fashion.webp" alt="Nykaa Fashion"></div><span class="n-meta">Mumbai | Jun 2024 – Sep 2025</span></div>
+        <span class="n-node" aria-hidden="true"></span>
+        <div class="n-xr"><h3>UI Designer</h3><div class="n-role"><span class="n-dur" data-start="2024-06" data-end="2025-09"></span><span class="n-type">Full-time</span></div><div class="n-chips"><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2.5" stroke="currentColor" stroke-width="2"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Landing pages</span><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>A/B testing</span><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/></svg>WCAG accessibility</span><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 3l14 7-6 2-2 6L5 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Prototyping</span></div></div>
+      </li>
+      <li class="n-xi" data-nr>
+        <div class="n-xl"><div class="n-lgw"><img class="n-xlg myntra" src="assets/images/logos/myntra.webp" alt="Myntra"></div><span class="n-meta">Bengaluru | Jan – Apr 2024</span></div>
+        <span class="n-node" aria-hidden="true"></span>
+        <div class="n-xr"><h3>Creative &amp; Curation Intern</h3><div class="n-role"><span class="n-dur" data-start="2024-01" data-end="2024-04"></span><span class="n-type">Internship</span></div><div class="n-chips"><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2.5" stroke="currentColor" stroke-width="2"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Campaign microsites</span><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Seasonal launches</span><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19l5-6 4 3 7-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Analytics-led layouts</span></div></div>
+      </li>
+      <li class="n-xi" data-nr>
+        <div class="n-xl"><div class="n-lgw"><img class="n-xlg times" src="assets/images/logos/times-internet.webp" alt="Times Internet"></div><span class="n-meta">Remote | May – Dec 2023</span></div>
+        <span class="n-node" aria-hidden="true"></span>
+        <div class="n-xr"><h3>Design Intern</h3><div class="n-role"><span class="n-dur" data-start="2023-05" data-end="2023-12"></span><span class="n-type">Internship</span></div><div class="n-chips"><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Emailers</span><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 10v4h3l7 5V5L6 10H3ZM17 9a4 4 0 0 1 0 6" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>Marketing campaigns</span><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="m10 8.5 5 3.5-5 3.5v-7Z" fill="currentColor"/></svg>Lottie motion</span></div></div>
+      </li>
+      </ol>
+    </div>
   </div>
   <div class="xo xo1">
   <ol class="xp" id="xp">
@@ -513,8 +518,23 @@
 <!-- ============ TOOLBOX ============ -->
 <section class="sec wrap rel" id="toolbox">
   <div class="sh">
-    <div><p class="lbl gd-only" data-rv>Toolbox</p><h2 class="split gd-only">What the work is <em>made of.</em></h2><h2 class="st-only graf sth2 neon spr" style="line-height:1">Toolbox</h2></div>
+    <div><h2 class="st-only graf sth2 neon spr" style="line-height:1">Toolbox</h2></div>
     <p data-rv style="--d:150ms">Grab a tool and throw it. Switch the gravity if you like.</p>
+  </div>
+  <div class="n-kitwrap gd-only">
+    <div class="n-head center"><p class="n-label pink" data-nr="blur">Toolkit</p><h2 data-nchars>What the work is made of</h2><p class="n-blurb" data-nr="blur" style="--d:160ms">Twelve tools in daily rotation, Figma mostly. AI sits right next to it.</p></div>
+    <div class="n-kit">
+      <div class="n-kit-group dark" data-nr><h3>AI</h3><div class="n-tools"><div class="n-tool"><i class="n-tile ti ti-claude"></i>Claude</div><div class="n-tool"><i class="n-tile ti ti-chatgpt"></i>ChatGPT</div><div class="n-tool"><i class="n-tile ti ti-gemini"></i>Gemini</div><div class="n-tool"><i class="n-tile ti ti-uxpilot"></i>UX Pilot</div><div class="n-tool"><i class="n-tile ti ti-midjourney"></i>Midjourney</div></div></div>
+      <div class="n-kit-group" data-nr style="--d:120ms"><h3>Design</h3><div class="n-tools"><div class="n-tool"><i class="n-tile ti ti-figma"></i>Figma</div><div class="n-tool"><i class="n-tile ti ti-xd"></i>Adobe XD</div><div class="n-tool"><i class="n-tile ti ti-ps"></i>Photoshop</div><div class="n-tool"><i class="n-tile ti ti-ai"></i>Illustrator</div></div></div>
+      <div class="n-kit-group" data-nr style="--d:240ms"><h3>Motion &amp; code</h3><div class="n-tools"><div class="n-tool"><i class="n-tile ti ti-framer"></i>Framer</div><div class="n-tool"><i class="n-tile ti ti-ae"></i>After Effects</div><div class="n-tool"><i class="n-tile ti ti-html"></i>HTML</div></div></div>
+    </div>
+    <div class="n-bottom">
+      <div class="n-panel" data-nr><h3>Skills</h3><div class="n-tagset"><span>UI/UX design</span><span>Responsive web</span><span>Usability testing</span><span>Wireframing</span><span>Prototyping</span><span>Information architecture</span><span>User research</span><span>Card sorting</span><span>User flows</span><span>Journey mapping</span></div></div>
+      <div class="n-panel n-edu" data-nr style="--d:120ms">
+        <div><h3>Education</h3><b>NIFT</b><span>Bachelor of Design | 2021 – 2024</span></div>
+        <div><h3>Certificate</h3><b>Google UX Design Professional</b><div class="n-cred">ID <code>LJTJUBPMUJO3</code></div></div>
+      </div>
+    </div>
   </div>
   <div class="modes" role="group" aria-label="Physics mode" data-rv>
     <button data-mode="fall" aria-pressed="true">Fall</button>
@@ -554,22 +574,13 @@
 </section>
 
 
-<!-- ============ LIGHT ============ -->
-<section class="light gd-only" id="light" aria-label="How I work">
-  <div>
-    <p class="lt-hint">Move the light</p>
-    <blockquote class="lt"><p class="dim">I design simple things, and use AI to get there faster.</p><p class="lit" aria-hidden="true">I design simple things, and use AI to get there faster.</p></blockquote>
-    <cite>Priyanka Yadav</cite>
-  </div>
-</section>
-
 <!-- ============ WALL ============ -->
 <section class="sec wrap" id="wall" aria-label="Spray wall">
   <div class="sh">
-    <div><p class="lbl gd-only" data-rv>The wall</p><h2 class="split gd-only">Leave your <em>tag.</em></h2><h2 class="st-only graf sth2"><span class="cream spr">Spray</span><span class="redg spr" data-drips="3">wall.</span></h2></div>
-    <p data-rv style="--d:150ms" class="gd-only">Hold and drag to spray. Stay still and the paint drips. Nothing is saved, everyone gets a clean wall.</p>
-    <div class="paper wall-note st-only">Every designer starts with a blank wall. This one is yours: pick a can, pick a cap and leave a tag. Hold still and it drips.<small>Nothing is saved</small></div>
+    <div><h2 class="st-only graf sth2"><span class="cream spr">Spray</span><span class="redg spr" data-drips="3">wall.</span></h2></div>
+        <div class="paper wall-note st-only">Every designer starts with a blank wall. This one is yours: pick a can, pick a cap and leave a tag. Hold still and it drips.<small>Nothing is saved</small></div>
   </div>
+  <div class="n-head row gd-only"><p class="n-label" data-nr="blur">The wall</p><div class="n-row"><h2 data-nchars>Leave your tag</h2><p class="n-blurb" data-nr="blur" style="--d:160ms">Every designer starts with a blank wall. This one is yours: pick a can, pick a cap and leave a tag. Hold still and it drips. Nothing is saved.</p></div></div>
   <div class="wall-wrap">
   <div class="wall-tools" data-rv>
     <div class="swatches" role="group" aria-label="Paint colour">
@@ -580,7 +591,7 @@
       <button style="--sw:#3cff52" data-c="#3cff52" aria-pressed="false" aria-label="Green"></button>
       <button style="--sw:#2f5bff" data-c="#2f5bff" aria-pressed="false" aria-label="Blue"></button>
       <button style="--sw:#8a3cff" data-c="#8a3cff" aria-pressed="false" aria-label="Purple"></button>
-      <button style="--sw:#dcb66c" data-c="#dcb66c" aria-pressed="false" aria-label="Gold"></button>
+      <button style="--sw:#fb4179" data-c="#fb4179" aria-pressed="false" aria-label="Pink"></button>
       <button style="--sw:#ffd400" data-c="#ffd400" aria-pressed="false" aria-label="Yellow"></button>
     </div>
     <div class="sizes" role="group" aria-label="Nozzle size">
@@ -592,7 +603,8 @@
   </div>
 </section>
 
-<section class="st-only st-mess wrap" id="mess" aria-label="Sticker playground">
+<section class="st-mess wrap" id="mess" aria-label="Sticker playground">
+  <div class="n-head row gd-only"><p class="n-label" data-nr="blur">Sticker playground</p><div class="n-row"><h2 data-nchars>Make a mess</h2><p class="n-blurb" data-nr="blur" style="--d:160ms">Peel a sticker, stick it anywhere. Tidy up when you’re done.</p></div></div>
   <div class="mess" id="messBox">
     <h2 class="mess-h graf"><span class="cream">Make a</span><span class="y">mess.</span></h2>
     <span class="mk" style="--x:12%;--y:14%;--r:-12deg"><span class="pillk" style="background:#f4dc1f;color:#141312">I <b style="color:#e3242b">♥</b> Figma</span></span>
@@ -614,9 +626,10 @@
 <!-- ============ CONTACT ============ -->
 <section class="sec wrap contact" id="contact">
   <div class="sh">
-    <div><p class="lbl gd-only" data-rv>Contact</p><h2 class="split gd-only">Let’s connect<em>?</em></h2><h2 class="st-only graf sth2 sm" style="display:block"><span class="cream spr" style="display:block">Let’s build</span><span class="neon fill spr" style="display:block;text-shadow:0 0 22px rgba(60,255,82,.5),.04em .05em 0 rgba(0,0,0,.6)">what’s next.</span></h2></div>
+    <div><h2 class="st-only graf sth2 sm" style="display:block"><span class="cream spr" style="display:block">Let’s build</span><span class="neon fill spr" style="display:block;text-shadow:0 0 22px rgba(60,255,82,.5),.04em .05em 0 rgba(0,0,0,.6)">what’s next.</span></h2></div>
     <p data-rv style="--d:150ms">Curious about how I think, work, or take my coffee? Reach out, I’d love to hear what you’re building.</p>
   </div>
+  <div class="n-ct-head gd-only"><h2 data-nchars>Let’s connect?</h2><p class="n-lede" data-nr="blur" style="--d:260ms">Curious about how I think, work, or take my coffee? Reach out, I’d love to hear what you’re building.</p></div>
   <div class="ct-grid">
     <div class="direct">
       <div class="field" data-rv><span class="k">Email</span><span class="v"><a href="mailto:priyankayadav76047@gmail.com" id="email">priyankayadav76047@gmail.com</a><button class="copy" id="copyBtn" aria-label="Copy email address"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="8.5" y="8.5" width="11.5" height="12.5" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M15 5.5C14.7 4 13.7 3 12 3H7C5.2 3 4 4.3 4 6.1v6.7c0 1.7 1 2.9 2.5 3.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button></span></div>
@@ -681,12 +694,11 @@
   </div>
   <div class="f-cols">
     <div><p>Designing simple things for people, from Gurugram.</p></div>
-    <div><h4>Index</h4><a href="#prologue">Replay the intro</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#toolbox">Toolbox</a><a href="#wall">The wall</a><a href="#contact">Contact</a></div>
+    <div><h4>Index</h4><a href="#home">Home</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#toolbox">Toolbox</a><a href="#wall">The wall</a><a href="#contact">Contact</a></div>
     <div><h4>Elsewhere</h4><a href="https://www.behance.net/priyankayadav40" target="_blank" rel="noopener">Behance</a><a href="https://www.linkedin.com/search/results/people/?keywords=Priyanka%20Yadav%20Noise" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:priyankayadav76047@gmail.com">Email</a>
       <div class="fstk st-only" aria-hidden="true"><span class="sb yellow sm" style="left:0;top:20px;--rt:-8deg;border-radius:999px">I ♥ design</span><span class="circ" style="position:absolute;left:150px;top:0;width:78px;height:78px;border-radius:50%;background:#2f5bff;border:4px solid #f1ece2;display:grid;place-items:center;font-family:var(--tag);font-size:34px;color:#fff;transform:rotate(8deg)">3+</span><span class="hello" style="left:70px;top:80px"><b>Hello</b><small>my name is</small><span>Priyanka</span></span></div></div>
     <div class="st-only"><div class="paper fnote"><i class="tape tc" style="--tw:80px"></i>No ads, no analytics, no trackers. Designed by Priyanka, in Gurugram, built with a little help from AI.</div></div>
   </div>
-  <div class="bigname gd-only" id="bigname" aria-hidden="true"></div>
   <div class="f-bot"><span>© <span id="year">2026</span> Priyanka Yadav</span><a href="#top" id="toTop">Back to top</a></div>
 </footer>
 </main>
@@ -724,6 +736,7 @@
 <script src="js/vendor/lenis.min.js"></script>
 <script src="js/vendor/matter.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/normal-mode.js"></script>
 <script>
 /* Review panel + Dev mode: only with ?review in the address */
 if(document.documentElement.classList.contains("ctl"))["js/dev-mode.js","js/review-controller.js"].forEach(function(s){var e=document.createElement("script");e.src=s;e.async=false;document.body.appendChild(e)});

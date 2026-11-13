@@ -34,7 +34,7 @@ sndBtn.addEventListener('click',()=>{setSound(!soundOn);toast(soundOn?'Sound on'
 $$('.split')?.forEach(el=>{let i=0;const walk=n=>{[...n.childNodes].forEach(c=>{if(c.nodeType===3){const fr=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(w=>{if(!w)return;if(/^\s+$/.test(w)){fr.appendChild(document.createTextNode(' '));return}const ws=document.createElement('span');ws.style.whiteSpace='nowrap';ws.style.display='inline-block';[...w].forEach(ch=>{const o=document.createElement('span');o.className='ch';const s=document.createElement('span');s.textContent=ch;s.style.setProperty('--i',i++);o.appendChild(s);ws.appendChild(o)});fr.appendChild(ws)});c.replaceWith(fr)}else if(c.nodeType===1)walk(c)})};walk(el)});
 
 /* ---------- street pieces: portrait, drips, dust ---------- */
-$$('img[data-portrait]')?.forEach(i=>{i.src=$('.arch img')?.src});
+$$('img[data-portrait]')?.forEach(i=>{if(!i.getAttribute('src'))i.src=$('.arch img')?.src});
 /* ---------- drips: each one runs from the real lowest ink of a letter (measured in context, whole line) ---------- */
 const dripCv=document.createElement('canvas'),dctx=dripCv.getContext('2d',{willReadFrequently:true});
 function seeded(n){let x=Math.sin(n*9301+49297)*233280;return x-Math.floor(x)}
@@ -236,7 +236,7 @@ strum?.addEventListener('touchmove',e=>{const t=e.touches[0];const el=document.e
 /* ---------- statement fills word by word ---------- */
 const st=$('#statement');const words=[];
 (function(){const walk=(n,bold)=>{[...n.childNodes].forEach(c=>{if(c.nodeType===3){const fr=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(w=>{if(!w)return;if(/^\s+$/.test(w)){fr.appendChild(document.createTextNode(' '));return}const s=document.createElement('span');s.className='w'+(bold?' b':'');s.textContent=w;fr.appendChild(s);words.push(s)});c.replaceWith(fr)}else if(c.nodeType===1){walk(c,c.tagName==='B');c.replaceWith(...c.childNodes)}})};if(st)walk(st,false)})();
-function statement(){const r=st?.getBoundingClientRect();const p=clamp((innerHeight*.85-r.top)/(r.height+innerHeight*.35),0,1);const n=reduce?words.length:Math.round(p*words.length);words.forEach((w,i)=>w?.classList.toggle('on',i<n))}
+function statement(){if(!st)return;const r=st.getBoundingClientRect();const p=clamp((innerHeight*.85-r.top)/(r.height+innerHeight*.35),0,1);const n=reduce?words.length:Math.round(p*words.length);words.forEach((w,i)=>w?.classList.toggle('on',i<n))}
 
 /* fade the film grain while a yellow paper is on screen, so the paper stays clean */
 (function(){const vis=new Set(),io2=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)vis.add(e.target);else vis.delete(e.target)});root.classList.toggle('nograin',vis.size>0)},{threshold:.2});$$('.paper.yellow')?.forEach(el=>io2.observe(el))})();
@@ -288,7 +288,7 @@ function setEdition(e,announce){root.dataset.edition=e;store.set('py:edition',e)
 const savedEd=store.get('py:edition');
 root.dataset.edition=(savedEd==='street'||savedEd==='gold')?savedEd:'gold';
 const sprayCv=$('#sprayCv'),sctx=sprayCv.getContext('2d'),can=$('#can');let sprayBusy=false;
-function goldBg(){const th=root.dataset.theme;const dark=th?th==='dark':matchMedia('(prefers-color-scheme: dark)').matches;return dark?'#0b0907':'#f2ede5'}
+function goldBg(){return '#ffffff'}
 function sprayTo(ed){
   if(sprayBusy||ed===root.dataset.edition)return;
   if(reduce){setEdition(ed,true);return}
@@ -386,7 +386,7 @@ if(location.hash.length>1){const t=document.getElementById(location.hash.slice(1
   const box=$('#wallBox'),cv=$('#wallCv'),ctx=cv?.getContext('2d');if(!cv)return;
   const sw=$$('.swatches button'),sz=$$('.sizes button[data-s]');
   let W=0,H=0,dpr=1,color='',size=24,down=false,x=0,y=0,lx=0,ly=0,still=0,drips=[],raf=0,hs=null;
-  function defColor(){return root.dataset.edition==='street'?'#3cff52':'#dcb66c'}
+  function defColor(){return root.dataset.edition==='street'?'#3cff52':'#fb4179'}
   function setColor(c){color=c;sw.forEach(b=>b.setAttribute('aria-pressed',b.dataset.c===c));const b=sw.find(x=>x.dataset.c===c);$('#wtc').style.background=c;$('#wtn').textContent=b?b.getAttribute('aria-label'):''}
   setColor(defColor());
   addEventListener('py:edition',()=>setColor(defColor()));
@@ -420,7 +420,7 @@ if(location.hash.length>1){const t=document.getElementById(location.hash.slice(1
     o.font=`${fs}px "Sedgwick Ave","Sedgwick Ave Display",cursive`;o.textAlign='center';o.textBaseline='middle';o.fillStyle='#000';o.fillText('Hii folks!',W/2,H*.42);
     const d=o.getImageData(0,0,W,H).data,pts=[],st=Math.max(3,Math.round(fs/30));
     for(let y=0;y<H;y+=st)for(let x=0;x<W;x+=st)if(d[(y*W+x)*4+3]>140)pts.push([x+(Math.random()-.5)*st,y+(Math.random()-.5)*st]);
-    pts.sort((a,b)=>a[0]-b[0]);const col=root.dataset.edition==='street'?'#e3242b':'#dcb66c';let i=0;const per=Math.max(1,Math.ceil(pts.length/80));
+    pts.sort((a,b)=>a[0]-b[0]);const col=root.dataset.edition==='street'?'#e3242b':'#fb4179';let i=0;const per=Math.max(1,Math.ceil(pts.length/80));
     (function step(){const end=Math.min(pts.length,i+per);ctx.fillStyle=col;
       for(;i<end;i++){const[px,py]=pts[i];ctx.globalAlpha=.14;ctx.beginPath();ctx.arc(px,py,st*1.5,0,7);ctx.fill();ctx.globalAlpha=.7;for(let k=0;k<3;k++){const a=Math.random()*6.283,rr=st*(.6+Math.random()*1.4);ctx.fillRect(px+Math.cos(a)*rr,py+Math.sin(a)*rr,1.3*dpr,1.3*dpr)}}
       ctx.globalAlpha=1;

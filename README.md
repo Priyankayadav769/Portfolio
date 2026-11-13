@@ -21,7 +21,7 @@ Brands worked with: Noise, Nykaa Fashion, Myntra, Times Internet.
 
 Visitors pick a mood on arrival and can switch at any time from the top bar (or press `N` / `S`).
 
-- **Normal**: warm light, frosted glass and gold. Follows the system light / dark setting.
+- **Normal**: clean white, Arial headlines, Noto Sans body and one pink accent. Same sections and content as Street: hero, brands, quick links, about, how I work, work, experience, toolkit, spray wall, sticker playground and contact.
 - **Street**: spray paint, stickers and a lot of red.
 
 ## Repository structure
@@ -51,8 +51,10 @@ portfolio/
 │   ├── 00-fonts.css              @font-face rules for assets/fonts
 │   ├── 01-tokens.css             Design tokens for every edition and theme
 │   ├── 02-base.css … 13-responsive.css
+│   └── 14-normal-mode.css        Normal mode look (loaded last)
 ├── js/
 │   ├── main.js                   Site behaviour (both pages)
+│   ├── normal-mode.js            Normal mode motion: letter reveals, lens, pinned lines, timeline
 │   ├── dev-mode.js               Dev mode inspector (review mode only)
 │   ├── review-controller.js      Review panel (review mode only)
 │   └── vendor/                   Lenis (smooth scroll) and Matter.js (physics), MIT
