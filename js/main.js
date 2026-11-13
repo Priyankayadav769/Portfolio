@@ -525,6 +525,9 @@ function curSection(){let c='top';$$('main section[id],main [id="links"]')?.forE
     if(location.hash==='#case-sleep'){location.replace(CASE_URL);return}
     const c1=$('.c1 .card-in');
     if(c1){c1.style.cursor='pointer';c1.addEventListener('click',e=>{if(e.target.closest('a'))return;location.href=CASE_URL})}
+    // Card 3 (Bose x Noise Master Buds): the whole card opens the launch page in a new tab
+    const c3=$('.c3 .card-in'),c3a=$('.c3 .c-link');
+    if(c3&&c3a){c3.style.cursor='pointer';c3.addEventListener('click',e=>{if(e.target.closest('a'))return;window.open(c3a.href,'_blank','noopener')})}
     document.addEventListener('click',e=>{const a=e.target.closest('a[href="#case-sleep"]');if(a){e.preventDefault();location.href=CASE_URL}},true);
     return}
   let lastY=0;
