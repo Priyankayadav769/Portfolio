@@ -458,7 +458,7 @@ if(location.hash.length>1){const t=document.getElementById(location.hash.slice(1
   let mailHref='',sending=false,done=false;
   async function submitInquiry(){if(sending||done)return;sending=true;send.disabled=true;send.textContent='Sending…';err.textContent='';
     try{if(!SHEET_URL)throw new Error('no endpoint');
-      const r=await fetch(SHEET_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({no:'No. '+no,name:data.name,email:data.email,type:data.type,when:data.when,msg:data.msg})});
+      const r=await fetch(SHEET_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({website:$('#fWebsite')?.value||'',no:'No. '+no,name:data.name,email:data.email,type:data.type,when:data.when,msg:data.msg})});
       const j=await r.json();if(!j.ok)throw new Error(j.error||'rejected');
       done=true;$('#dName').textContent=data.name;$('#dEmail').textContent=data.email;
       $('.f-body').hidden=true;$('.f-nav').hidden=true;err.hidden=true;$('#fDone').hidden=false;ticket?.classList.add('ready');const st=ticket?.querySelector('.stamp');if(st)st.textContent='Sent';

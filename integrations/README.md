@@ -10,3 +10,9 @@
 
 The first submission adds a header row (Received, Inquiry No., Name, Email, Designing, Timing, Story).
 After changing the script later, use **Deploy > Manage deployments > Edit > New version**; the URL stays the same.
+
+## Privacy
+- The sheet itself stays private. Keep its share setting on **Restricted**.
+- The web app only accepts new rows (`doPost`). It has no `doGet`, so the URL cannot be used to read any data.
+- "Anyone" on the deployment only means visitors can submit the form without signing in to Google.
+- Spam protection: a hidden "website" field catches bots, fields are validated, duplicates are ignored for 10 minutes, and the script stops after 40 rows an hour.
