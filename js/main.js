@@ -455,13 +455,21 @@ if(location.hash.length>1){const t=document.getElementById(location.hash.slice(1
   const steps=$$('.step'),dots=$$('#fSteps li'),next=$('#fNext'),back=$('#fBack'),send=$('#fSend'),err=$('#fErr'),stepNo=$('#stepNo'),ticket=$('#ticket');if(!next)return;
   const data={name:'',email:'',type:'',when:'',msg:''};let s=0;
   const SHEET_URL='https://script.google.com/macros/s/AKfycbxzCip0ERkI4crn4t1tH8l90Js3NS0GVmMDr_qDVxzmFeS_5jXCTwhltXmdQUY8gOi0xg/exec';/* Google Apps Script web app URL, see integrations/README.md */let lastSent='';
-  function logToSheet(){if(!SHEET_URL)return;const body=JSON.stringify({no:'No. '+no,name:data.name,email:data.email,type:data.type,when:data.when,msg:data.msg});if(body===lastSent)return;lastSent=body;try{fetch(SHEET_URL,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain;charset=utf-8'},body}).catch(()=>{lastSent=''})}catch(e){lastSent=''}}
+  let mailHref='',sending=false,done=false;
+  async function submitInquiry(){if(sending||done)return;sending=true;send.disabled=true;send.textContent='Sending…';err.textContent='';
+    try{if(!SHEET_URL)throw new Error('no endpoint');
+      const r=await fetch(SHEET_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({no:'No. '+no,name:data.name,email:data.email,type:data.type,when:data.when,msg:data.msg})});
+      const j=await r.json();if(!j.ok)throw new Error(j.error||'rejected');
+      done=true;$('#dName').textContent=data.name;$('#dEmail').textContent=data.email;
+      $('.f-body').hidden=true;$('.f-nav').hidden=true;err.hidden=true;$('#fDone').hidden=false;ticket?.classList.add('ready');const st=ticket?.querySelector('.stamp');if(st)st.textContent='Sent';
+      toast('Inquiry sent');pluck(783.99,.1)}
+    catch(e){sending=false;send.disabled=false;send.textContent='Send inquiry';err.textContent='Couldn’t send that just now. Opening your mail app so it still reaches me.';window.open(mailHref,'_blank','noopener')}}
   const no=String((new Date().getDate()*37+new Date().getMonth()*11)%9000+1000);$('#tNo').textContent='No. '+no;
   function setT(id,v,ph){const el=$(id);el.textContent=v||ph;el?.classList.toggle('empty',!v)}
   function paint(){steps.forEach((x,i)=>x.classList.toggle('on',i===s));dots.forEach((d,i)=>d.classList.toggle('on',i<=s));if(stepNo)stepNo.textContent=s+1;back.style.visibility=s?'visible':'hidden';next.style.display=s===3?'none':'';send.style.display=s===3?'':'none';err.textContent='';
     setT('#tName',data.name,'Your name');setT('#tType',data.type,'Step 2');setT('#tWhen',data.when,'Step 3');
     const body=`Hi Priyanka,\n\n${data.msg||''}\n\nProject: ${data.type||'-'}\nTiming: ${data.when||'-'}\n\n${data.name}\n${data.email}`;
-    send.href='mailto:priyankayadav76047@gmail.com?subject='+encodeURIComponent('Project inquiry No. '+no+(data.name?' from '+data.name:''))+'&body='+encodeURIComponent(body);
+    mailHref='mailto:priyankayadav76047@gmail.com?subject='+encodeURIComponent('Project inquiry No. '+no+(data.name?' from '+data.name:''))+'&body='+encodeURIComponent(body);
     ticket?.classList.toggle('ready',s===3&&data.msg.trim().length>0)}
   function valid(){if(s===0){data.name=$('#fName')?.value.trim();data.email=$('#fEmail')?.value.trim();if(!data.name){err.textContent='Add your name to continue.';return false}if(!/^\S+@\S+\.\S+$/.test(data.email)){err.textContent='Add an email I can reply to, like you@company.com.';return false}}
     if(s===1&&!data.type){err.textContent='Pick what we’re designing.';return false}
@@ -472,7 +480,7 @@ if(location.hash.length>1){const t=document.getElementById(location.hash.slice(1
   $('#fMsg')?.addEventListener('input',e=>{data.msg=e.target.value;paint()});
   $$('.opts')?.forEach(g=>g.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;$$('button',g)?.forEach(x=>x.setAttribute('aria-pressed',x===b));data[g.dataset.key]=b.textContent;pluck(659.25,.06);paint()}));
   [$('#fName'),$('#fEmail')].forEach(i=>i.addEventListener('keydown',e=>{if(e.key==='Enter')next?.click()}));
-  send?.addEventListener('click',e=>{if(!data.msg.trim()){e.preventDefault();err.textContent='Write a line or two about the project first.';return}logToSheet();toast('Opening your mail app');pluck(783.99,.1)});
+  send?.addEventListener('click',()=>{if(!data.msg.trim()){err.textContent='Write a line or two about the project first.';return}submitInquiry()});
   paint();
 })();
 

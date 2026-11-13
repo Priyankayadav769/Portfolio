@@ -344,3 +344,6 @@ html[data-edition="street"] body{background:radial-gradient(120% 90% at 50% 40%,
   .ft,.flabel{display:none}
   .mk{transform:rotate(var(--r,0deg)) scale(.82);transform-origin:0 0}
 }
+
+[data-edition="street"] .f-done .q{font-family:var(--tag);font-size:clamp(34px,3.6vw,52px);text-transform:uppercase;line-height:1;color:var(--s-grn)}
+[data-edition="street"] .f-done p:not(.q){font-family:var(--sans)}

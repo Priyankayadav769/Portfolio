@@ -648,11 +648,15 @@
           <label>What should exist that doesn’t yet?<textarea id="fMsg" placeholder="A few lines is plenty"></textarea></label>
         </div>
       </div>
+      <div class="f-done" id="fDone" role="status" hidden>
+        <p class="q">Inquiry sent.</p>
+        <p>Thanks, <b id="dName"></b>. I’ll reply to <b id="dEmail"></b> soon.</p>
+      </div>
       <p class="err" id="fErr" role="alert"></p>
       <div class="f-nav">
         <button class="btn ghost sm" id="fBack" type="button" style="visibility:hidden">Back</button>
         <button class="btn gold sm" id="fNext" type="button">Next</button>
-        <a class="btn gold sm" id="fSend" href="mailto:priyankayadav76047@gmail.com" target="_blank" rel="noopener" style="display:none">Send inquiry</a>
+        <button class="btn gold sm" id="fSend" type="button" style="display:none">Send inquiry</button>
       </div>
       <div class="ticket" id="ticket" aria-live="polite">
         <span class="stamp">Ready</span>
