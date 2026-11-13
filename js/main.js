@@ -495,7 +495,7 @@ function reel(){if(!reelEl||root.dataset.intro!=='o1'||root.dataset.edition!=='s
   const si=Math.max(0,ph-1);
   if(ph!==reelPh){reelPh=ph;
     $$('.rscr',reelEl)?.forEach(s=>{const i=+s.dataset.s;s.classList.toggle('on',i===si);s.classList.toggle('past',i<si);const v=$('video',s);if(v){if(i===si&&!reduce){const pr=v.play();pr&&pr.catch(()=>{})}else v.pause()}});
-    $('.ptag',reelEl).innerHTML=['<span class="sb white sm">● Shipped</span>','<span class="sb yellow sm">Kids product</span>','<span class="sb red sm">Launch page</span>'][si];
+    $('.ptag',reelEl).innerHTML=['<span class="sb white sm">NFA Feature</span>','<span class="sb yellow sm">Kids product</span>','<span class="sb red sm">Launch page</span>'][si];
     $('.o1-right',reelEl)?.style.setProperty('--glow2',['rgba(132,86,255,.38)','rgba(120,200,255,.32)','rgba(227,36,43,.35)'][si]);
     $('.dev3',reelEl)?.style.setProperty('--prot',[3,-3,4,-2][ph]+'deg');if(ph>0)tick()}
   $$('.o1-rail button',reelEl)?.forEach((b,i)=>{b.querySelector('u').style.setProperty('--f',(ph>i+1?1:clamp(p*4-(i+1),0,1)).toFixed(3));b.classList.toggle('on',si===i&&ph>0)});
