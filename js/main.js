@@ -454,7 +454,7 @@ if(location.hash.length>1){const t=document.getElementById(location.hash.slice(1
 (function(){
   const steps=$$('.step'),dots=$$('#fSteps li'),next=$('#fNext'),back=$('#fBack'),send=$('#fSend'),err=$('#fErr'),stepNo=$('#stepNo'),ticket=$('#ticket');if(!next)return;
   const data={name:'',email:'',type:'',when:'',msg:''};let s=0;
-  const SHEET_URL='';/* Google Apps Script web app URL, see integrations/README.md */let lastSent='';
+  const SHEET_URL='https://script.google.com/macros/s/AKfycbxzCip0ERkI4crn4t1tH8l90Js3NS0GVmMDr_qDVxzmFeS_5jXCTwhltXmdQUY8gOi0xg/exec';/* Google Apps Script web app URL, see integrations/README.md */let lastSent='';
   function logToSheet(){if(!SHEET_URL)return;const body=JSON.stringify({no:'No. '+no,name:data.name,email:data.email,type:data.type,when:data.when,msg:data.msg});if(body===lastSent)return;lastSent=body;try{fetch(SHEET_URL,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain;charset=utf-8'},body}).catch(()=>{lastSent=''})}catch(e){lastSent=''}}
   const no=String((new Date().getDate()*37+new Date().getMonth()*11)%9000+1000);$('#tNo').textContent='No. '+no;
   function setT(id,v,ph){const el=$(id);el.textContent=v||ph;el?.classList.toggle('empty',!v)}
