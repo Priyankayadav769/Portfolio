@@ -79,7 +79,7 @@ const once=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.ta
 const replay=new IntersectionObserver(es=>es.forEach(e=>{const t=e.target;
   if(e.isIntersecting){t.classList.remove('out');t.classList.add('in')}
   else if(t.classList.contains('in')){t.classList.add('out');t.classList.remove('in')}}),{threshold:0,rootMargin:'0px 0px -10% 0px'});
-$$('[data-nr]').forEach(el=>(el.closest('.n-grid,.n-profile,.n-kit,.n-bottom,.n-line,.n-quick,.n-logo-row')?once:replay).observe(el));
+$$('[data-nr]').forEach(el=>(el.closest('.n-grid,.n-stats,.n-kit,.n-bottom,.n-line,.n-quick,.n-logo-row')?once:replay).observe(el));
 $$('[data-nchars]:not([data-nchars="manual"])').forEach(el=>replay.observe(el));
 if(reduce)$$('[data-nr],[data-nchars]').forEach(el=>el.classList.add('in'));
 
