@@ -456,7 +456,7 @@ if(location.hash.length>1){const t=document.getElementById(location.hash.slice(1
   const data={name:'',email:'',type:'',when:'',msg:''};let s=0;
   const no=String((new Date().getDate()*37+new Date().getMonth()*11)%9000+1000);$('#tNo').textContent='No. '+no;
   function setT(id,v,ph){const el=$(id);el.textContent=v||ph;el?.classList.toggle('empty',!v)}
-  function paint(){steps.forEach((x,i)=>x.classList.toggle('on',i===s));dots.forEach((d,i)=>d.classList.toggle('on',i<=s));stepNo.textContent=s+1;back.style.visibility=s?'visible':'hidden';next.style.display=s===3?'none':'';send.style.display=s===3?'':'none';err.textContent='';
+  function paint(){steps.forEach((x,i)=>x.classList.toggle('on',i===s));dots.forEach((d,i)=>d.classList.toggle('on',i<=s));if(stepNo)stepNo.textContent=s+1;back.style.visibility=s?'visible':'hidden';next.style.display=s===3?'none':'';send.style.display=s===3?'':'none';err.textContent='';
     setT('#tName',data.name,'Your name');setT('#tType',data.type,'Step 2');setT('#tWhen',data.when,'Step 3');
     const body=`Hi Priyanka,\n\n${data.msg||''}\n\nProject: ${data.type||'-'}\nTiming: ${data.when||'-'}\n\n${data.name}\n${data.email}`;
     send.href='mailto:priyankayadav76047@gmail.com?subject='+encodeURIComponent('Project inquiry No. '+no+(data.name?' from '+data.name:''))+'&body='+encodeURIComponent(body);

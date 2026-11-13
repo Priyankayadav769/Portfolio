@@ -243,7 +243,7 @@ html[data-edition="street"] body{background:radial-gradient(120% 90% at 50% 40%,
 [data-edition="street"] .swatches button[aria-pressed="true"]{transform:translateY(-8px);box-shadow:0 12px 0 -8px var(--sw),0 4px 8px rgba(0,0,0,.5)}
 [data-edition="street"] .sizes button{border-radius:9px;border:2px solid var(--s-cream);background:#141312;color:var(--s-cream);font-family:var(--sten);font-weight:800;text-transform:uppercase;letter-spacing:.03em}
 [data-edition="street"] .sizes button[aria-pressed="true"]{background:var(--s-cream);color:#141312}
-.wall-note{max-width:330px;padding:22px 24px;transform:rotate(2deg);font-family:"Bodoni Moda",Georgia,serif;font-size:17px;line-height:1.35}
+.wall-note{max-width:330px;padding:22px 24px;transform:rotate(2deg);font-family:var(--sans);font-weight:400;font-size:17px;line-height:1.45}
 .wall-note small{display:block;margin-top:10px;font-family:var(--sten);font-weight:800;color:var(--s-red);text-transform:uppercase;letter-spacing:.06em;font-size:12px}
 
 /* make a mess */
