@@ -432,8 +432,8 @@ if(location.hash.length>1){const t=document.getElementById(location.hash.slice(1
 
 /* ---------- make a mess: draggable stickers ---------- */
 (function(){const box=$('#messBox');if(!box)return;const mks=$$('.mk',box);const init=mks.map(m=>m.getAttribute('style'));let z=10;
-  mks.forEach((m,idx)=>m.addEventListener('pointerdown',e=>{e.preventDefault();m.setPointerCapture(e.pointerId);const mr=m.getBoundingClientRect(),ox=e.clientX-mr.left,oy=e.clientY-mr.top;m.classList.add('drag');m.style.zIndex=++z;const r0=parseFloat(m.style.getPropertyValue('--r'))||0;let lastX=e.clientX;pluck(scale[idx%scale.length],.06);
-    const mv=ev=>{const b=box?.getBoundingClientRect();m.style.left=clamp(ev.clientX-b.left-ox,-40,b.width-40)+'px';m.style.top=clamp(ev.clientY-b.top-oy,-30,b.height-30)+'px';const vx=ev.clientX-lastX;lastX=ev.clientX;m.style.setProperty('--r',clamp(r0+vx*1.5,-30,30).toFixed(1)+'deg')};
+  mks.forEach((m,idx)=>m.addEventListener('pointerdown',e=>{e.preventDefault();m.setPointerCapture(e.pointerId);const sx=e.clientX,sy=e.clientY,l0=m.offsetLeft,t0=m.offsetTop;m.classList.add('drag');m.style.zIndex=++z;const r0=parseFloat(m.style.getPropertyValue('--r'))||0;let lastX=e.clientX;pluck(scale[idx%scale.length],.06);
+    const mv=ev=>{const b=box?.getBoundingClientRect();m.style.left=clamp(l0+ev.clientX-sx,-40,b.width-40)+'px';m.style.top=clamp(t0+ev.clientY-sy,-30,b.height-30)+'px';const vx=ev.clientX-lastX;lastX=ev.clientX;m.style.setProperty('--r',clamp(r0+vx*1.5,-30,30).toFixed(1)+'deg')};
     const upf=()=>{m.classList.remove('drag');m.removeEventListener('pointermove',mv);m.removeEventListener('pointerup',upf);m.removeEventListener('pointercancel',upf);m.style.setProperty('--r',(r0+(Math.random()-.5)*12).toFixed(1)+'deg');tick()};
     m.addEventListener('pointermove',mv);m.addEventListener('pointerup',upf);m.addEventListener('pointercancel',upf)}));
   $('#messReset')?.addEventListener('click',()=>{mks.forEach((m,i)=>m.setAttribute('style',init[i]));tick()})})();
