@@ -1,0 +1,99 @@
+/* Case study in Normal mode: same white, Arial and pink look as the home page.
+   Loaded after 14-normal-mode.css on case-study pages only. Street keeps 10-case-study.css as is. */
+
+html[data-edition="gold"] .case{--cn-text:#000;--cn-mute:#6f6f6f;--cn-line:rgba(0,0,0,.08);background:#fff;color:#000;font-family:var(--noto)}
+html[data-edition="gold"] .case .cs-hero-bg{background:radial-gradient(60% 55% at 78% 30%,rgba(251,65,121,.12),transparent 70%),linear-gradient(180deg,#fff 0%,#fff 100%)}
+html[data-edition="gold"] .case .dp{display:none!important}
+
+/* headings: graffiti spans become one black line + one pink line */
+html[data-edition="gold"] .case .graf{font-family:var(--arial)!important;font-weight:700;font-style:normal;text-transform:none;letter-spacing:calc(.6 * var(--nu));text-shadow:none!important;filter:none!important;-webkit-text-stroke:0!important}
+html[data-edition="gold"] .case .graf span{background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;-webkit-text-fill-color:currentColor!important;text-shadow:none!important;filter:none!important;animation:none!important;transform:none!important;opacity:1!important}
+html[data-edition="gold"] .case .graf .cream{color:#000!important}
+html[data-edition="gold"] .case .graf .redg{color:var(--n-pink)!important}
+html[data-edition="gold"] .case .cs-h1{font-size:max(46px,108 * var(--nu));line-height:1.08;display:block;margin-bottom:calc(30 * var(--nu))}
+html[data-edition="gold"] .case .cs-h1 span,html[data-edition="gold"] .case .cs-h2 span{display:block}
+html[data-edition="gold"] .case .cs-h2{font-size:max(32px,56 * var(--nu));line-height:1.12;display:block}
+html[data-edition="gold"] .case .cs-end .cs-h2{font-size:max(40px,96 * var(--nu))}
+html[data-edition="gold"] .case .tlabel{display:block;font-family:var(--noto);font-weight:500;font-size:max(14px,18 * var(--nu));letter-spacing:calc(.2 * var(--nu));text-transform:none;color:var(--n-btn);background:none;border:0;padding:0;transform:none;box-shadow:none;clip-path:none}
+html[data-edition="gold"] .case .tlabel::before,html[data-edition="gold"] .case .tlabel::after{display:none}
+
+/* body copy */
+html[data-edition="gold"] .case .cs-p,html[data-edition="gold"] .case .cs-lead,html[data-edition="gold"] .case .cs-watch li,html[data-edition="gold"] .case .cmp-text p{font-family:var(--noto);font-weight:500;color:var(--cn-mute)}
+html[data-edition="gold"] .case .cs-lead{font-size:max(16px,20 * var(--nu));line-height:1.6}
+html[data-edition="gold"] .case .cs-p b{color:#000}
+html[data-edition="gold"] .case .cs-kt{font-family:var(--noto);font-weight:500;color:var(--n-grey);font-size:max(14px,20 * var(--nu))}
+html[data-edition="gold"] .case .cs-ktags{color:var(--n-grey)}
+
+/* hero */
+html[data-edition="gold"] .case .cs-heroPhone{transform:translateX(-50%) rotate(0deg)}
+html[data-edition="gold"] .case .cs-note{font-family:var(--arial);font-weight:700;color:var(--n-btn);font-size:max(15px,22 * var(--nu));line-height:1.2}
+html[data-edition="gold"] .case .sb{height:auto;min-height:0;padding:max(8px,10 * var(--nu)) max(16px,20 * var(--nu));border:0;border-radius:1000px;background:#f1f0f0;color:#000;font-family:var(--noto);font-weight:500;font-size:max(13px,15 * var(--nu));text-transform:none;letter-spacing:0;box-shadow:none;transform:none!important;line-height:1.3}
+html[data-edition="gold"] .case .sb::before,html[data-edition="gold"] .case .sb::after{display:none}
+html[data-edition="gold"] .case .sb.red,html[data-edition="gold"] .case .sb.purple{background:var(--n-btn);color:#fff}
+html[data-edition="gold"] .case .sb.yellow{background:var(--n-soft);color:var(--n-pink)}
+html[data-edition="gold"] .case .sb.dark{background:#000;color:#fff}
+html[data-edition="gold"] .case .sb.white{background:#fff;color:#000;box-shadow:inset 0 0 0 1px rgba(0,0,0,.1)}
+html[data-edition="gold"] .case .cs-stk{box-shadow:0 14px 30px -14px rgba(0,0,0,.35)}
+
+/* project facts */
+html[data-edition="gold"] .case .cs-credits{border-color:var(--cn-line)}
+html[data-edition="gold"] .case .cs-credits div+div{border-left-color:var(--cn-line)}
+html[data-edition="gold"] .case .cs-credits span{color:var(--n-grey);font-family:var(--noto);font-weight:500;font-size:max(13px,16 * var(--nu))}
+html[data-edition="gold"] .case .cs-credits b{color:#000;font-family:var(--noto);font-weight:500}
+
+/* where it started: questions as chat bubbles */
+html[data-edition="gold"] .case .cs-q{transform:none;box-shadow:none;background:#f1f0f0;color:#000;font-family:var(--arial);font-weight:700;font-size:max(18px,26 * var(--nu));line-height:1.3;border-radius:calc(20 * var(--nu)) calc(20 * var(--nu)) calc(20 * var(--nu)) calc(4 * var(--nu))}
+html[data-edition="gold"] .case .cs-q.y{background:var(--n-soft);color:var(--n-pink)}
+html[data-edition="gold"] .case .cs-q.r{background:var(--n-btn);color:#fff}
+
+/* problems */
+html[data-edition="gold"] .case .cs-prob{background:var(--n-card);box-shadow:none;border-radius:calc(20 * var(--nu));transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+html[data-edition="gold"] .case .cs-prob:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px rgba(0,0,0,.35)}
+html[data-edition="gold"] .case .cs-prob b{font-family:var(--arial);font-weight:700;color:var(--n-btn);font-size:max(22px,30 * var(--nu))}
+html[data-edition="gold"] .case .cs-prob h3{font-family:var(--arial);font-weight:700;color:#000}
+html[data-edition="gold"] .case .cs-prob p{font-family:var(--noto);font-weight:500;color:var(--cn-mute)}
+
+/* paper notes become cards */
+html[data-edition="gold"] .case .paper{filter:none!important;background:var(--n-card)!important;transform:none!important;box-shadow:none!important;border-radius:calc(20 * var(--nu));clip-path:none!important;-webkit-mask:none!important;mask:none!important}
+html[data-edition="gold"] .case .paper::before,html[data-edition="gold"] .case .paper::after{display:none!important}
+html[data-edition="gold"] .case .paper.yellow{background:#000!important}
+html[data-edition="gold"] .case .paper .tape{display:none}
+html[data-edition="gold"] .case .cs-pn b{font-family:var(--arial);font-weight:700;font-size:max(20px,26 * var(--nu));color:#000;line-height:1.2}
+html[data-edition="gold"] .case .cs-pn p{font-family:var(--noto);font-weight:500;color:var(--cn-mute)}
+html[data-edition="gold"] .case .paper.yellow b{color:#fff}
+html[data-edition="gold"] .case .paper.yellow p{color:rgba(255,255,255,.7)}
+
+/* old vs new */
+html[data-edition="gold"] .case .cmp-chips{-webkit-mask-image:none;mask-image:none}
+html[data-edition="gold"] .case .cmp-chips button{height:auto;padding:max(10px,12 * var(--nu)) max(18px,24 * var(--nu));border:0;border-radius:1000px;background:#f1f0f0;color:#000;font-family:var(--noto);font-weight:500;font-size:max(14px,16 * var(--nu));text-transform:none;letter-spacing:0;box-shadow:none;transform:none;transition:background .3s,color .3s}
+html[data-edition="gold"] .case .cmp-chips button:hover{background:var(--n-soft);color:var(--n-pink)}
+html[data-edition="gold"] .case .cmp-chips button[aria-selected="true"]{background:var(--n-btn);color:#fff}
+html[data-edition="gold"] .case .cmp-tag{font-family:var(--noto);font-weight:500;text-transform:none;letter-spacing:0}
+html[data-edition="gold"] .case .cmp-tag.old{background:#f1f0f0;color:#000}
+html[data-edition="gold"] .case .cmp-tag.new{background:var(--n-btn);color:#fff}
+html[data-edition="gold"] .case .cmp-text p b{color:#000}
+html[data-edition="gold"] .case .cmp-text p.o{border-color:#d6d6d6}
+html[data-edition="gold"] .case .cmp-text p.n{border-color:var(--n-btn)}
+html[data-edition="gold"] .case .cmp-none{color:var(--cn-mute)}
+
+/* add sleep flow */
+html[data-edition="gold"] .case .fl-row,html[data-edition="gold"] .case .fl-row.nap{background:var(--n-card);box-shadow:none;border-radius:calc(24 * var(--nu))}
+html[data-edition="gold"] .case .fl-head b{font-family:var(--arial);font-weight:700;color:#000}
+html[data-edition="gold"] .case .fl-arrow{color:#c9c9c9}
+html[data-edition="gold"] .case .fl-n{font-family:var(--arial);font-weight:700;color:var(--n-btn);font-size:max(24px,30 * var(--nu))}
+html[data-edition="gold"] .case .fl-cap h4{font-family:var(--arial);font-weight:700;color:#000}
+html[data-edition="gold"] .case .fl-cap p{font-family:var(--noto);font-weight:500;color:var(--cn-mute)}
+
+/* after launch */
+html[data-edition="gold"] .case .cs-watch li::before{border-color:var(--n-btn)}
+
+/* phones sit on white: softer shadow */
+html[data-edition="gold"] .case .np{box-shadow:0 40px 70px -34px rgba(0,0,0,.45),inset 0 0 0 1.5px rgba(255,255,255,.14)}
+
+/* end */
+html[data-edition="gold"] .case .cs-end-ctas .sb{background:var(--n-btn);color:#fff;font-size:max(15px,20 * var(--nu));padding:max(12px,14 * var(--nu)) max(26px,34 * var(--nu));transition:background .35s,transform .4s var(--ease)!important}
+html[data-edition="gold"] .case .cs-end-ctas .sb:hover{background:#000;transform:translateY(-2px)!important}
+
+/* nav back link */
+html[data-edition="gold"] .nav-back{font-family:var(--noto);font-weight:500;border-radius:1000px;background:#f2f2f2;border:0;color:#000}
+html[data-edition="gold"] .nav-back:hover{background:var(--n-soft);color:var(--n-pink)}

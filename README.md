@@ -51,7 +51,8 @@ portfolio/
 │   ├── 00-fonts.css              @font-face rules for assets/fonts
 │   ├── 01-tokens.css             Design tokens for every edition and theme
 │   ├── 02-base.css … 13-responsive.css
-│   └── 14-normal-mode.css        Normal mode look (loaded last)
+│   ├── 14-normal-mode.css        Normal mode look
+│   └── 15-case-normal.css        Normal mode look for case studies (loaded last there)
 ├── js/
 │   ├── main.js                   Site behaviour (both pages)
 │   ├── normal-mode.js            Normal mode motion: letter reveals, lens, pinned lines, timeline
@@ -87,7 +88,7 @@ Add `?review` to the address (https://priyankayadav769.github.io/portfolio/?revi
 ## Adding a case study
 
 1. Create the page inside `case-studies/` (for example `case-studies/noise-junior/index.html`).
-2. Copy the `<head>` from `case-studies/noisefit-sleep.html`, keep `data-page="case"` on the `<html>` tag (it skips the home-page loader and animations), and adjust the `../` paths to the folder depth.
+2. Copy the `<head>` from `case-studies/noisefit-sleep.html` (it includes the Normal mode styles `14-normal-mode.css` and `15-case-normal.css`), keep `data-page="case"` on the `<html>` tag (it skips the home-page loader and animations), and adjust the `../` paths to the folder depth.
 3. Put images in `assets/images/projects/` as .webp or .jpg, and videos in `assets/videos/`.
 4. Point the project's card in `index.html` to the new page.
 
