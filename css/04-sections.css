@@ -282,6 +282,11 @@
 .opts{display:flex;flex-wrap:wrap;gap:8px}
 .opts button{height:42px;padding:0 16px;border-radius:999px;border:1px solid var(--line);font-size:15px;transition:all .3s var(--ease)}
 .opts button[aria-pressed="true"]{background:var(--acc);color:var(--on-acc);border-color:var(--acc)}
+.f-done{display:flex;flex-direction:column;gap:14px;min-height:200px;justify-content:center;animation:stepIn .6s var(--ease)}
+.f-done[hidden],.f-nav[hidden],.f-body[hidden]{display:none}
+.f-done .q{font-family:var(--serif);font-size:clamp(26px,2.4vw,34px);line-height:1.15;margin:0;color:var(--ink)}
+.f-done p:not(.q){margin:0;font-size:17px;line-height:1.5;color:var(--ink)}
+.f-done b{font-weight:700}
 .err{min-height:20px;font-size:13.5px;color:#d9534f;margin:0}
 .f-nav{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:20px}
 .ticket{margin-top:22px;border-radius:20px;padding:20px 22px;background:var(--bg2);border:1px dashed var(--glass-b);display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;font-size:14px;position:relative;overflow:hidden}
