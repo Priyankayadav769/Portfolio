@@ -131,3 +131,14 @@
 [data-edition="street"] .xo1 .xl .logo{filter:none;box-sizing:border-box;width:128px;height:56px;max-width:none;padding:13px 16px;background-color:#f4f1ea;background-origin:content-box;background-position:center;border-radius:10px;box-shadow:0 4px 0 rgba(0,0,0,.5)}
 [data-edition="street"] .xo1 .xl .lg-nykaa{height:56px;padding:9px 16px}
 [data-edition="street"] .xo1 .xl .lg-noise,[data-edition="street"] .xo1 .xl .lg-nykaa,[data-edition="street"] .xo1 .xl .lg-myntra,[data-edition="street"] .xo1 .xl .lg-times{aspect-ratio:auto}
+
+/* ============ Hero: one balanced, centred fold on mobile ============ */
+@media (max-width:900px){
+  .st-hero{padding-top:76px}
+  .st-hero .sth-grid{align-content:center;justify-items:center;gap:clamp(10px,2svh,20px);padding:1.5svh 0}
+  .st-hero .sth-photo.pol{padding:0;width:100%}
+  .st-hero .hero-pol{width:min(300px,78%,23svh)}
+  .st-hero .sth-left{width:100%;padding-bottom:0}
+  .st-hero .o1-line{margin:clamp(8px,1.6svh,16px) auto}
+  .st-hero .worked{margin-top:clamp(8px,1.8svh,16px)}
+}
