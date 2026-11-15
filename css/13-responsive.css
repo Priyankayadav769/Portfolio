@@ -142,3 +142,10 @@
   .st-hero .o1-line{margin:clamp(8px,1.6svh,16px) auto}
   .st-hero .worked{margin-top:clamp(8px,1.8svh,16px)}
 }
+
+/* ============ Hero on desktop: centre the text + photo group ============ */
+@media (min-width:901px){
+  .st-hero .sth-grid{grid-template-columns:minmax(0,640px) minmax(0,460px);justify-content:center;column-gap:clamp(56px,8vw,140px)}
+  .st-hero .sth-photo.pol{justify-self:center;width:100%}
+  .st-hero .hero-pol{margin-inline:auto}
+}
