@@ -122,7 +122,7 @@ function arm(){$$('[data-rv],.split,.spr')?.forEach(el=>{if(el?.id!=='megaTitle'
 const loader=$('#loader');const loaderTpl=loader.outerHTML;
 function replayLoader(){const old=$('#loader');if(old)old.remove();document.body.insertAdjacentHTML('afterbegin',loaderTpl);const L=$('#loader');const g=$$('.greet span',L);let k=0;requestAnimationFrame(()=>L.classList.add('go'));const step=()=>{g.forEach((s,j)=>{s.classList.toggle('on',j===k);s.classList.toggle('off',j<k)});k++;if(k<g.length)setTimeout(step,640);else setTimeout(()=>{L.classList.add('done');setTimeout(()=>L.remove(),1200)},780)};setTimeout(step,120)}
 function startPage(){arm();setTimeout(()=>$('#megaTitle')?.classList.add('in'),120);const se=store.get('py:edition');}
-if(reduce||sess.get('py:seen')||root.dataset.page==='case'){loader.remove();startPage()}
+if(reduce||sess.get('py:seen')||root.dataset.page==='case'||(root.dataset.edition==='street'&&matchMedia('(max-width:899px)').matches)){loader.remove();startPage()}/* no intro loader in Street on phones */
 else{
   sess.set('py:seen','1');
   const g=$$('.greet span',loader);let k=0;
@@ -540,6 +540,9 @@ function curSection(){let c='top';$$('main section[id],main [id="links"]')?.forE
     if(location.hash==='#case-sleep'){location.replace(CASE_URL);return}
     const c1=$('.c1 .card-in');
     if(c1){c1.style.cursor='pointer';c1.addEventListener('click',e=>{if(e.target.closest('a'))return;location.href=CASE_URL})}
+    // Card 2 (Noise Junior): the whole card opens the Coming soon page
+    const c2=$('.c2 .card-in'),c2a=$('.c2 .c-link');
+    if(c2&&c2a){c2.style.cursor='pointer';c2.addEventListener('click',e=>{if(e.target.closest('a'))return;location.href=c2a.getAttribute('href')})}
     // Card 3 (Bose x Noise Master Buds): the whole card opens the launch page in a new tab
     const c3=$('.c3 .card-in'),c3a=$('.c3 .c-link');
     if(c3&&c3a){c3.style.cursor='pointer';c3.addEventListener('click',e=>{if(e.target.closest('a'))return;window.open(c3a.href,'_blank','noopener')})}

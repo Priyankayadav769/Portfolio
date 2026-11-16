@@ -499,3 +499,11 @@ html[data-edition="gold"] .mess-bar{justify-content:flex-end}
 .n-stage{margin-bottom:calc(18 * var(--nu))}
 html[data-edition="gold"] .progress{display:none}
 @media (max-width:900px){.n-project{gap:4px;padding-bottom:18px}.n-stage{margin-bottom:12px}}
+
+/* Hamburger menu: the Download resume button was inheriting the big menu-link style */
+.mmenu .mm-tools a.mm-cv{display:inline-flex!important;align-items:center;justify-content:center;gap:9px;height:44px;padding:0 24px;font-family:var(--noto);font-size:15px;font-weight:500;line-height:1;letter-spacing:0;text-transform:none;white-space:nowrap}
+.mmenu .mm-tools a.mm-cv svg{width:18px;height:18px;flex:none;display:block}
+[data-edition="street"] .mmenu .mm-tools a.mm-cv{font-family:var(--sten);font-size:17px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:2px 24px 0}
+
+/* no intro loader in Street on phones (also stops a flash before the script runs) */
+@media (max-width:899px){html[data-edition="street"] .loader{display:none}}
