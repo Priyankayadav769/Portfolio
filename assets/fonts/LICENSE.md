@@ -16,5 +16,6 @@ used, embedded and redistributed freely, but may not be sold on their own.
 | JetBrains Mono | `jetbrains-mono/` | https://fonts.google.com/specimen/JetBrains+Mono/license |
 | Big Shoulders Stencil | `big-shoulders-stencil/` | https://fonts.google.com/specimen/Big+Shoulders+Stencil/license |
 | Big Shoulders Stencil Display | `big-shoulders-stencil-display/` | https://fonts.google.com/specimen/Big+Shoulders+Stencil+Display/license |
+| Noto Sans | `noto-sans/` | https://fonts.google.com/specimen/Noto+Sans/license |
 
 Only the Latin, Latin Extended and Devanagari subsets are included. They're loaded by `css/00-fonts.css`.
