@@ -8,6 +8,10 @@ const fine=matchMedia('(pointer: fine)').matches;
 const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
 const sess={get(k){try{return sessionStorage.getItem(k)}catch(e){return null}},set(k,v){try{sessionStorage.setItem(k,v)}catch(e){}}};
 const root=document.documentElement;
+/* every visit, refresh or reopened link starts at the top (no remembered scroll, no #section jump) */
+try{history.scrollRestoration='manual'}catch(e){}
+if(location.hash&&location.hash!=='#case-sleep'){try{history.replaceState(null,'',location.pathname+location.search)}catch(e){}}
+scrollTo(0,0);addEventListener('pageshow',e=>{if(e.persisted)scrollTo(0,0)});
 {const REVIEW=/[?&]review\b/.test(location.search);const rv=k=>{if(!REVIEW)return null;try{return localStorage.getItem(k)}catch(e){return null}};let it=rv("py:intro");root.dataset.intro=(it==="o1"||it==="o2"||it==="cur")?it:"cur";{let cf=rv("py:cf");root.dataset.cf=(cf==="2"||cf==="3")?cf:"1"}{let xp=rv("py:xp");root.dataset.xp=(xp==="2"||xp==="3")?xp:"1"}{let cl=rv("py:cmpl");root.dataset.cmpl=(cl==="2"||cl==="3"||cl==="4")?cl:"1"}if(REVIEW){root.classList.add("ctl");if(innerWidth<900)root.classList.add("ctl-min")}}
 {const se=(()=>{try{return localStorage.getItem("py:edition")}catch(e){return null}})();root.dataset.edition=(se==="street"||se==="gold")?se:"gold"}
 
