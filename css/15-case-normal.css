@@ -97,3 +97,16 @@ html[data-edition="gold"] .case .cs-end-ctas .sb:hover{background:#000;transform
 /* nav back link */
 html[data-edition="gold"] .nav-back{font-family:var(--noto);font-weight:500;border-radius:1000px;background:#f2f2f2;border:0;color:#000}
 html[data-edition="gold"] .nav-back:hover{background:var(--n-soft);color:var(--n-pink)}
+
+/* ============ Back icon (both modes): round arrow that fades into the background ============ */
+.nav .nav-back{order:-1;width:46px;height:46px;padding:0;margin:0 4px 0 -6px;gap:0;justify-content:center;border:0;border-radius:50%;font-size:0;flex:none;transition:background .3s,color .25s,transform .3s var(--spring)}
+.nav .nav-back svg{width:22px;height:22px}
+.nav .nav-back:hover{transform:translateX(-3px)}
+html[data-edition="gold"] .nav .nav-back{color:#000;background:radial-gradient(closest-side,rgba(0,0,0,.09),rgba(0,0,0,.05) 55%,rgba(0,0,0,0))}
+html[data-edition="gold"] .nav .nav-back:hover{color:var(--n-pink);background:radial-gradient(closest-side,rgba(246,42,118,.2),rgba(246,42,118,.09) 55%,rgba(246,42,118,0))}
+html[data-edition="street"] .nav .nav-back{color:var(--s-cream);background:radial-gradient(closest-side,rgba(241,236,226,.2),rgba(241,236,226,.08) 55%,rgba(241,236,226,0))}
+html[data-edition="street"] .nav .nav-back:hover{color:#fff;background:radial-gradient(closest-side,rgba(227,36,43,.5),rgba(227,36,43,.18) 55%,rgba(227,36,43,0))}
+@media (max-width:900px){.nav .nav-back{width:42px;height:42px;margin:0 6px 0 -8px}}
+
+/* Normal mode: keep "Priyanka Yadav" in the nav on the case study, at every width */
+html.case-open[data-edition="gold"] .nav .brand>span:last-child{display:inline}

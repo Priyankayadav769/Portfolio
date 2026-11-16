@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" data-edition="street">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Coming soon · Priyanka Yadav</title>
+<meta name="description" content="Priyanka Yadav's full portfolio is coming soon. Get in touch to see it, or view her older work on Behance.">
+<link rel="stylesheet" href="css/00-fonts.css">
+<link rel="stylesheet" href="css/01-tokens.css">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{min-height:100svh;display:grid;place-items:center;padding:96px var(--gut,20px) 64px;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+.back{position:fixed;top:max(14px,env(safe-area-inset-top));left:calc(var(--gut,20px) - 8px);display:grid;place-items:center;width:46px;height:46px;border-radius:50%;color:var(--ink);text-decoration:none;transition:background .3s,color .25s,transform .3s cubic-bezier(.34,1.56,.64,1)}
+.back svg{width:22px;height:22px}
+.back:hover{transform:translateX(-3px)}
+html[data-edition="gold"] .back{background:radial-gradient(closest-side,rgba(0,0,0,.09),rgba(0,0,0,.05) 55%,rgba(0,0,0,0))}
+html[data-edition="gold"] .back:hover{color:#f62a76;background:radial-gradient(closest-side,rgba(246,42,118,.2),rgba(246,42,118,.09) 55%,rgba(246,42,118,0))}
+html[data-edition="street"] .back{color:var(--s-cream);background:radial-gradient(closest-side,rgba(241,236,226,.2),rgba(241,236,226,.08) 55%,rgba(241,236,226,0))}
+html[data-edition="street"] .back:hover{color:#fff;background:radial-gradient(closest-side,rgba(227,36,43,.5),rgba(227,36,43,.18) 55%,rgba(227,36,43,0))}
+main{width:min(720px,100%);text-align:center}
+.kick{margin:0 0 18px;font:800 13px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+h1{margin:0 0 22px;font-size:clamp(40px,8vw,84px);line-height:1}
+.copy{margin:0 auto 34px;max-width:34em;font-size:clamp(16px,2vw,20px);line-height:1.6;color:var(--mute)}
+.ctas{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.cta{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;text-decoration:none;font-weight:700;font-size:16px;transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.cta:hover{transform:translateY(-3px)}
+/* Normal */
+html[data-edition="gold"]{--bg:#fff;--ink:#000;--mute:#6f6f6f;--sans:"Noto Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+html[data-edition="gold"] h1{font-family:Arial,"Helvetica Neue",Helvetica,sans-serif;font-weight:700;letter-spacing:-.02em}
+html[data-edition="gold"] h1 em{font-style:normal;color:#f62a76}
+html[data-edition="gold"] .cta{border-radius:999px;background:#fb4179;color:#fff}
+html[data-edition="gold"] .cta.ghost{background:transparent;color:#000;box-shadow:inset 0 0 0 1.5px #000}
+/* Street */
+html[data-edition="street"] h1{font-family:var(--tag);font-weight:400;text-transform:uppercase;line-height:.92}
+html[data-edition="street"] h1 em{font-style:normal;color:var(--s-red);text-shadow:.04em .05em 0 rgba(0,0,0,.6)}
+html[data-edition="street"] .kick,html[data-edition="street"] .back,html[data-edition="street"] .cta{font-family:var(--sten);font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+html[data-edition="street"] .copy{font-family:var(--sans);color:rgba(241,236,226,.78)}
+html[data-edition="street"] .cta{border-radius:10px;border:2.5px solid var(--s-cream);background:var(--s-red);color:#fff;box-shadow:0 4px 0 rgba(0,0,0,.5)}
+html[data-edition="street"] .cta.ghost{background:#141312;color:var(--s-cream)}
+</style>
+<script>try{var e=localStorage.getItem("py:edition");document.documentElement.dataset.edition=(e==="street"||e==="gold")?e:"street"}catch(x){}</script>
+</head>
+<body>
+<a class="back" href="index.html#work" aria-label="Back to all work"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<main>
+  <p class="kick">Work</p>
+  <h1><em>Coming soon.....</em></h1>
+  <p class="copy">I’m still putting the full portfolio together. Reach out to me and I’ll walk you through it, or have a look at my older work on Behance in the meantime.</p>
+  <div class="ctas">
+    <a class="cta" href="mailto:priyankayadav76047@gmail.com">Reach out</a>
+    <a class="cta ghost" href="https://www.behance.net/priyankayadav40" target="_blank" rel="noopener">View older work on Behance</a>
+  </div>
+</main>
+</body>
+</html>
