@@ -488,3 +488,8 @@ html[data-edition="gold"] .mess-bar{justify-content:flex-end}
 .n-stat-card.pink strong{color:var(--n-pink)}
 .n-stat-card>span{color:#6f6f6f;font-size:max(15px,20 * var(--nu));line-height:1.35}
 @media (max-width:900px){.n-stats{grid-template-columns:1fr 1fr;gap:12px;padding:60px 20px 0}.n-stat-card{padding:22px 18px;border-radius:16px}}
+
+/* Work cards: tag line (same as Street), instead of the description */
+.n-ctags{display:flex;flex-wrap:wrap;margin:0;padding:0;list-style:none;color:#6f6f6f;font:500 max(14px,18 * var(--nu))/1.5 var(--noto)}
+.n-ctags li:not(:last-child)::after{content:"|";margin:0 .7em;opacity:.5}
+@media (max-width:600px){.n-ctags{font-size:13px}.n-ctags li:not(:last-child)::after{margin:0 .5em}}
