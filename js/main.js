@@ -13,7 +13,7 @@ try{history.scrollRestoration='manual'}catch(e){}
 if(location.hash&&location.hash!=='#case-sleep'){try{history.replaceState(null,'',location.pathname+location.search)}catch(e){}}
 scrollTo(0,0);addEventListener('pageshow',e=>{if(e.persisted)scrollTo(0,0)});
 {const REVIEW=/[?&]review\b/.test(location.search);const rv=k=>{if(!REVIEW)return null;try{return localStorage.getItem(k)}catch(e){return null}};let it=rv("py:intro");root.dataset.intro=(it==="o1"||it==="o2"||it==="cur")?it:"cur";{let cf=rv("py:cf");root.dataset.cf=(cf==="2"||cf==="3")?cf:"1"}{let xp=rv("py:xp");root.dataset.xp=(xp==="2"||xp==="3")?xp:"1"}{let cl=rv("py:cmpl");root.dataset.cmpl=(cl==="2"||cl==="3"||cl==="4")?cl:"1"}if(REVIEW){root.classList.add("ctl");if(innerWidth<900)root.classList.add("ctl-min")}}
-{const se=(()=>{try{return localStorage.getItem("py:edition")}catch(e){return null}})();root.dataset.edition=(se==="street"||se==="gold")?se:"gold"}
+{const se=(()=>{try{return localStorage.getItem("py:edition")}catch(e){return null}})();root.dataset.edition=(se==="street"||se==="gold")?se:"street"}
 
 /* ---------- toast ---------- */
 const toastEl=$('#toast');let tt;
@@ -121,7 +121,7 @@ function arm(){$$('[data-rv],.split,.spr')?.forEach(el=>{if(el?.id!=='megaTitle'
 /* ---------- loader ---------- */
 const loader=$('#loader');const loaderTpl=loader.outerHTML;
 function replayLoader(){const old=$('#loader');if(old)old.remove();document.body.insertAdjacentHTML('afterbegin',loaderTpl);const L=$('#loader');const g=$$('.greet span',L);let k=0;requestAnimationFrame(()=>L.classList.add('go'));const step=()=>{g.forEach((s,j)=>{s.classList.toggle('on',j===k);s.classList.toggle('off',j<k)});k++;if(k<g.length)setTimeout(step,640);else setTimeout(()=>{L.classList.add('done');setTimeout(()=>L.remove(),1200)},780)};setTimeout(step,120)}
-function startPage(){arm();setTimeout(()=>$('#megaTitle')?.classList.add('in'),120);const se=store.get('py:edition');if(se!=='gold'&&se!=='street'&&!reduce&&root.dataset.intro==='cur'&&root.dataset.page!=='case')setTimeout(()=>window.__openChooser&&window.__openChooser(),400)}
+function startPage(){arm();setTimeout(()=>$('#megaTitle')?.classList.add('in'),120);const se=store.get('py:edition');}
 if(reduce||sess.get('py:seen')||root.dataset.page==='case'){loader.remove();startPage()}
 else{
   sess.set('py:seen','1');
@@ -290,7 +290,7 @@ function hiss(d,vol=.1){if(!soundOn)return null;const a=ac();if(!a)return null;c
 function rattle(){if(!soundOn)return;[0,110,220].forEach(ms=>setTimeout(()=>pluck(2400+Math.random()*400,.05),ms))}
 function setEdition(e,announce){root.dataset.edition=e;store.set('py:edition',e);dispatchEvent(new Event('py:edition'));if(announce)toast(e==='gold'?'Normal mode':'Street mode')}
 const savedEd=store.get('py:edition');
-root.dataset.edition=(savedEd==='street'||savedEd==='gold')?savedEd:'gold';
+root.dataset.edition=(savedEd==='street'||savedEd==='gold')?savedEd:'street';
 const sprayCv=$('#sprayCv'),sctx=sprayCv.getContext('2d'),can=$('#can');let sprayBusy=false;
 function goldBg(){return '#ffffff'}
 function toTop(){if(lenis)lenis.scrollTo(0,{immediate:true,force:true});else scrollTo(0,0)}
